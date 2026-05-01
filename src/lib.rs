@@ -11,11 +11,75 @@ use generic::*;
 pub mod generic;
 #[cfg(feature = "rt")]
 extern "C" {
+    fn i2c();
+    fn i2c1();
+    fn i2c2();
+    fn i2c3();
+    fn i2c4();
+    fn i2c5();
+    fn i2c6();
+    fn i2c7();
+    fn i2c8();
+    fn i2c9();
+    fn i2c10();
+    fn i2c11();
+    fn i2c12();
+    fn i2c13();
+    fn adc();
+    fn gpio();
+    fn sgpio();
     fn spipf1();
     fn spipf2();
+    fn rtc();
+    fn timer();
+    fn timer1();
+    fn timer2();
+    fn timer3();
+    fn i3c();
+    fn i3c1();
+    fn i3c2();
+    fn i3c3();
+    fn i3c4();
+    fn i3c5();
+    fn i3c6();
+    fn i3c7();
+    fn wdt();
+    fn wdt1();
+    fn wdt2();
+    fn wdt3();
+    fn wdt4();
+    fn wdt5();
+    fn wdt6();
+    fn wdt7();
     fn spi();
     fn spi1();
     fn spi2();
+    fn io_ahb_matrix();
+    fn timer4();
+    fn timer5();
+    fn timer6();
+    fn timer7();
+    fn uart();
+    fn uart1();
+    fn uart2();
+    fn uart3();
+    fn uart4();
+    fn uart5();
+    fn uartdma();
+    fn uhci();
+    fn ehci();
+    fn ehci1();
+    fn scu();
+    fn jtag();
+    fn otp_reg();
+    fn gsram();
+    fn at();
+    fn ipc();
+    fn ipc1();
+    fn ipc2();
+    fn ipc3();
+    fn ipc4();
+    fn ipc5();
 }
 #[doc(hidden)]
 #[repr(C)]
@@ -27,7 +91,7 @@ pub union Vector {
 #[doc(hidden)]
 #[link_section = ".vector_table.interrupts"]
 #[no_mangle]
-pub static __INTERRUPTS: [Vector; 124] = [
+pub static __INTERRUPTS: [Vector; 180] = [
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
@@ -92,33 +156,46 @@ pub static __INTERRUPTS: [Vector; 124] = [
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
+    Vector { _handler: i2c },
+    Vector { _handler: i2c1 },
+    Vector { _handler: i2c2 },
+    Vector { _handler: i2c3 },
+    Vector { _handler: i2c4 },
+    Vector { _handler: i2c5 },
+    Vector { _handler: i2c6 },
+    Vector { _handler: i2c7 },
+    Vector { _handler: i2c8 },
+    Vector { _handler: i2c9 },
+    Vector { _handler: i2c10 },
+    Vector { _handler: i2c11 },
+    Vector { _handler: i2c12 },
+    Vector { _handler: i2c13 },
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
+    Vector { _handler: adc },
     Vector { _reserved: 0 },
+    Vector { _handler: gpio },
     Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
+    Vector { _handler: sgpio },
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
     Vector { _handler: spipf1 },
     Vector { _handler: spipf2 },
     Vector { _reserved: 0 },
+    Vector { _handler: rtc },
+    Vector { _handler: timer },
+    Vector { _handler: timer1 },
+    Vector { _handler: timer2 },
+    Vector { _handler: timer3 },
+    Vector { _handler: i3c },
+    Vector { _handler: i3c1 },
+    Vector { _handler: i3c2 },
+    Vector { _handler: i3c3 },
+    Vector { _handler: i3c4 },
+    Vector { _handler: i3c5 },
+    Vector { _handler: i3c6 },
+    Vector { _handler: i3c7 },
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
@@ -127,46 +204,219 @@ pub static __INTERRUPTS: [Vector; 124] = [
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
-    Vector { _reserved: 0 },
+    Vector { _handler: wdt },
+    Vector { _handler: wdt1 },
+    Vector { _handler: wdt2 },
+    Vector { _handler: wdt3 },
+    Vector { _handler: wdt4 },
+    Vector { _handler: wdt5 },
+    Vector { _handler: wdt6 },
+    Vector { _handler: wdt7 },
     Vector { _reserved: 0 },
     Vector { _handler: spi },
     Vector { _handler: spi1 },
     Vector { _handler: spi2 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector {
+        _handler: io_ahb_matrix,
+    },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _handler: timer4 },
+    Vector { _handler: timer5 },
+    Vector { _handler: timer6 },
+    Vector { _handler: timer7 },
+    Vector { _handler: uart },
+    Vector { _handler: uart1 },
+    Vector { _handler: uart2 },
+    Vector { _handler: uart3 },
+    Vector { _handler: uart4 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _handler: uart5 },
+    Vector { _handler: uartdma },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _handler: uhci },
+    Vector { _handler: ehci },
+    Vector { _handler: ehci1 },
+    Vector { _reserved: 0 },
+    Vector { _handler: scu },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _handler: jtag },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _handler: otp_reg },
+    Vector { _handler: gsram },
+    Vector { _handler: at },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _reserved: 0 },
+    Vector { _handler: ipc },
+    Vector { _handler: ipc1 },
+    Vector { _handler: ipc2 },
+    Vector { _handler: ipc3 },
+    Vector { _handler: ipc4 },
+    Vector { _handler: ipc5 },
 ];
 #[doc = r"Enumeration of all the interrupts."]
 #[derive(Copy, Clone, Debug, PartialEq, Eq)]
 #[repr(u16)]
 pub enum Interrupt {
+    #[doc = "64 - i2c"]
+    i2c = 64,
+    #[doc = "65 - i2c1"]
+    i2c1 = 65,
+    #[doc = "66 - i2c2"]
+    i2c2 = 66,
+    #[doc = "67 - i2c3"]
+    i2c3 = 67,
+    #[doc = "68 - i2c4"]
+    i2c4 = 68,
+    #[doc = "69 - i2c5"]
+    i2c5 = 69,
+    #[doc = "70 - i2c6"]
+    i2c6 = 70,
+    #[doc = "71 - i2c7"]
+    i2c7 = 71,
+    #[doc = "72 - i2c8"]
+    i2c8 = 72,
+    #[doc = "73 - i2c9"]
+    i2c9 = 73,
+    #[doc = "74 - i2c10"]
+    i2c10 = 74,
+    #[doc = "75 - i2c11"]
+    i2c11 = 75,
+    #[doc = "76 - i2c12"]
+    i2c12 = 76,
+    #[doc = "77 - i2c13"]
+    i2c13 = 77,
+    #[doc = "80 - adc"]
+    adc = 80,
+    #[doc = "82 - gpio"]
+    gpio = 82,
+    #[doc = "84 - sgpio"]
+    sgpio = 84,
     #[doc = "88 - spipf1"]
     spipf1 = 88,
     #[doc = "89 - spipf2"]
     spipf2 = 89,
+    #[doc = "91 - rtc"]
+    rtc = 91,
+    #[doc = "92 - timer"]
+    timer = 92,
+    #[doc = "93 - timer1"]
+    timer1 = 93,
+    #[doc = "94 - timer2"]
+    timer2 = 94,
+    #[doc = "95 - timer3"]
+    timer3 = 95,
+    #[doc = "96 - i3c"]
+    i3c = 96,
+    #[doc = "97 - i3c1"]
+    i3c1 = 97,
+    #[doc = "98 - i3c2"]
+    i3c2 = 98,
+    #[doc = "99 - i3c3"]
+    i3c3 = 99,
+    #[doc = "100 - i3c4"]
+    i3c4 = 100,
+    #[doc = "101 - i3c5"]
+    i3c5 = 101,
+    #[doc = "102 - i3c6"]
+    i3c6 = 102,
+    #[doc = "103 - i3c7"]
+    i3c7 = 103,
+    #[doc = "112 - wdt"]
+    wdt = 112,
+    #[doc = "113 - wdt1"]
+    wdt1 = 113,
+    #[doc = "114 - wdt2"]
+    wdt2 = 114,
+    #[doc = "115 - wdt3"]
+    wdt3 = 115,
+    #[doc = "116 - wdt4"]
+    wdt4 = 116,
+    #[doc = "117 - wdt5"]
+    wdt5 = 117,
+    #[doc = "118 - wdt6"]
+    wdt6 = 118,
+    #[doc = "119 - wdt7"]
+    wdt7 = 119,
     #[doc = "121 - spi"]
     spi = 121,
     #[doc = "122 - spi1"]
     spi1 = 122,
     #[doc = "123 - spi2"]
     spi2 = 123,
+    #[doc = "126 - io_ahb_matrix"]
+    io_ahb_matrix = 126,
+    #[doc = "131 - timer4"]
+    timer4 = 131,
+    #[doc = "132 - timer5"]
+    timer5 = 132,
+    #[doc = "133 - timer6"]
+    timer6 = 133,
+    #[doc = "134 - timer7"]
+    timer7 = 134,
+    #[doc = "135 - uart"]
+    uart = 135,
+    #[doc = "136 - uart1"]
+    uart1 = 136,
+    #[doc = "137 - uart2"]
+    uart2 = 137,
+    #[doc = "138 - uart3"]
+    uart3 = 138,
+    #[doc = "139 - uart4"]
+    uart4 = 139,
+    #[doc = "147 - uart5"]
+    uart5 = 147,
+    #[doc = "148 - uartdma"]
+    uartdma = 148,
+    #[doc = "155 - uhci"]
+    uhci = 155,
+    #[doc = "156 - ehci"]
+    ehci = 156,
+    #[doc = "157 - ehci1"]
+    ehci1 = 157,
+    #[doc = "159 - scu"]
+    scu = 159,
+    #[doc = "162 - jtag"]
+    jtag = 162,
+    #[doc = "168 - otp_reg"]
+    otp_reg = 168,
+    #[doc = "169 - gsram"]
+    gsram = 169,
+    #[doc = "170 - at"]
+    at = 170,
+    #[doc = "174 - ipc"]
+    ipc = 174,
+    #[doc = "175 - ipc1"]
+    ipc1 = 175,
+    #[doc = "176 - ipc2"]
+    ipc2 = 176,
+    #[doc = "177 - ipc3"]
+    ipc3 = 177,
+    #[doc = "178 - ipc4"]
+    ipc4 = 178,
+    #[doc = "179 - ipc5"]
+    ipc5 = 179,
 }
 unsafe impl cortex_m::interrupt::InterruptNumber for Interrupt {
     #[inline(always)]
@@ -201,6 +451,456 @@ impl core::fmt::Debug for Spi2 {
 }
 #[doc = "spi interface"]
 pub use self::spi as spi2;
+#[doc = "i3c"]
+pub type I3c = crate::Periph<i3c::RegisterBlock, 0x74c2_0000>;
+impl core::fmt::Debug for I3c {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("I3c").finish()
+    }
+}
+#[doc = "i3c"]
+pub mod i3c;
+#[doc = "i3c interface"]
+pub type I3c1 = crate::Periph<i3c::RegisterBlock, 0x74c2_1000>;
+impl core::fmt::Debug for I3c1 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("I3c1").finish()
+    }
+}
+#[doc = "i3c interface"]
+pub use self::i3c as i3c1;
+#[doc = "i3c interface"]
+pub type I3c2 = crate::Periph<i3c::RegisterBlock, 0x74c2_2000>;
+impl core::fmt::Debug for I3c2 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("I3c2").finish()
+    }
+}
+#[doc = "i3c interface"]
+pub use self::i3c as i3c2;
+#[doc = "i3c interface"]
+pub type I3c3 = crate::Periph<i3c::RegisterBlock, 0x74c2_3000>;
+impl core::fmt::Debug for I3c3 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("I3c3").finish()
+    }
+}
+#[doc = "i3c interface"]
+pub use self::i3c as i3c3;
+#[doc = "i3c interface"]
+pub type I3c4 = crate::Periph<i3c::RegisterBlock, 0x74c2_4000>;
+impl core::fmt::Debug for I3c4 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("I3c4").finish()
+    }
+}
+#[doc = "i3c interface"]
+pub use self::i3c as i3c4;
+#[doc = "i3c interface"]
+pub type I3c5 = crate::Periph<i3c::RegisterBlock, 0x74c2_5000>;
+impl core::fmt::Debug for I3c5 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("I3c5").finish()
+    }
+}
+#[doc = "i3c interface"]
+pub use self::i3c as i3c5;
+#[doc = "i3c interface"]
+pub type I3c6 = crate::Periph<i3c::RegisterBlock, 0x74c2_6000>;
+impl core::fmt::Debug for I3c6 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("I3c6").finish()
+    }
+}
+#[doc = "i3c interface"]
+pub use self::i3c as i3c6;
+#[doc = "i3c interface"]
+pub type I3c7 = crate::Periph<i3c::RegisterBlock, 0x74c2_7000>;
+impl core::fmt::Debug for I3c7 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("I3c7").finish()
+    }
+}
+#[doc = "i3c interface"]
+pub use self::i3c as i3c7;
+#[doc = "gpio"]
+pub type Gpio = crate::Periph<gpio::RegisterBlock, 0x74c0_b000>;
+impl core::fmt::Debug for Gpio {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Gpio").finish()
+    }
+}
+#[doc = "gpio"]
+pub mod gpio;
+#[doc = "sgpio"]
+pub type Sgpio = crate::Periph<sgpio::RegisterBlock, 0x74c0_c000>;
+impl core::fmt::Debug for Sgpio {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Sgpio").finish()
+    }
+}
+#[doc = "sgpio"]
+pub mod sgpio;
+#[doc = "sgpio interface"]
+pub type Sgpio1 = crate::Periph<sgpio::RegisterBlock, 0x74c0_d000>;
+impl core::fmt::Debug for Sgpio1 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Sgpio1").finish()
+    }
+}
+#[doc = "sgpio interface"]
+pub use self::sgpio as sgpio1;
+#[doc = "scu"]
+pub type Scu = crate::Periph<scu::RegisterBlock, 0x74c0_2000>;
+impl core::fmt::Debug for Scu {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Scu").finish()
+    }
+}
+#[doc = "scu"]
+pub mod scu;
+#[doc = "uart"]
+pub type Uart = crate::Periph<uart::RegisterBlock, 0x74c3_3000>;
+impl core::fmt::Debug for Uart {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Uart").finish()
+    }
+}
+#[doc = "uart"]
+pub mod uart;
+#[doc = "uart interface"]
+pub type Uart1 = crate::Periph<uart::RegisterBlock, 0x74c3_4000>;
+impl core::fmt::Debug for Uart1 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Uart1").finish()
+    }
+}
+#[doc = "uart interface"]
+pub use self::uart as uart1;
+#[doc = "uart interface"]
+pub type Uart2 = crate::Periph<uart::RegisterBlock, 0x74c3_5000>;
+impl core::fmt::Debug for Uart2 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Uart2").finish()
+    }
+}
+#[doc = "uart interface"]
+pub use self::uart as uart2;
+#[doc = "uart interface"]
+pub type Uart3 = crate::Periph<uart::RegisterBlock, 0x74c3_6000>;
+impl core::fmt::Debug for Uart3 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Uart3").finish()
+    }
+}
+#[doc = "uart interface"]
+pub use self::uart as uart3;
+#[doc = "uart interface"]
+pub type Uart4 = crate::Periph<uart::RegisterBlock, 0x74c3_7000>;
+impl core::fmt::Debug for Uart4 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Uart4").finish()
+    }
+}
+#[doc = "uart interface"]
+pub use self::uart as uart4;
+#[doc = "uart interface"]
+pub type Uart5 = crate::Periph<uart::RegisterBlock, 0x74c3_f000>;
+impl core::fmt::Debug for Uart5 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Uart5").finish()
+    }
+}
+#[doc = "uart interface"]
+pub use self::uart as uart5;
+#[doc = "uartdma"]
+pub type Uartdma = crate::Periph<uartdma::RegisterBlock, 0x74c1_2000>;
+impl core::fmt::Debug for Uartdma {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Uartdma").finish()
+    }
+}
+#[doc = "uartdma"]
+pub mod uartdma;
+#[doc = "i2cglobal"]
+pub type I2cglobal = crate::Periph<i2cglobal::RegisterBlock, 0x74c0_f000>;
+impl core::fmt::Debug for I2cglobal {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("I2cglobal").finish()
+    }
+}
+#[doc = "i2cglobal"]
+pub mod i2cglobal;
+#[doc = "i2c"]
+pub type I2c = crate::Periph<i2c::RegisterBlock, 0x74c0_f100>;
+impl core::fmt::Debug for I2c {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("I2c").finish()
+    }
+}
+#[doc = "i2c"]
+pub mod i2c;
+#[doc = "i2c interface"]
+pub type I2c1 = crate::Periph<i2c::RegisterBlock, 0x74c0_f200>;
+impl core::fmt::Debug for I2c1 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("I2c1").finish()
+    }
+}
+#[doc = "i2c interface"]
+pub use self::i2c as i2c1;
+#[doc = "i2c interface"]
+pub type I2c2 = crate::Periph<i2c::RegisterBlock, 0x74c0_f300>;
+impl core::fmt::Debug for I2c2 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("I2c2").finish()
+    }
+}
+#[doc = "i2c interface"]
+pub use self::i2c as i2c2;
+#[doc = "i2c interface"]
+pub type I2c3 = crate::Periph<i2c::RegisterBlock, 0x74c0_f400>;
+impl core::fmt::Debug for I2c3 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("I2c3").finish()
+    }
+}
+#[doc = "i2c interface"]
+pub use self::i2c as i2c3;
+#[doc = "i2c interface"]
+pub type I2c4 = crate::Periph<i2c::RegisterBlock, 0x74c0_f500>;
+impl core::fmt::Debug for I2c4 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("I2c4").finish()
+    }
+}
+#[doc = "i2c interface"]
+pub use self::i2c as i2c4;
+#[doc = "i2c interface"]
+pub type I2c5 = crate::Periph<i2c::RegisterBlock, 0x74c0_f600>;
+impl core::fmt::Debug for I2c5 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("I2c5").finish()
+    }
+}
+#[doc = "i2c interface"]
+pub use self::i2c as i2c5;
+#[doc = "i2c interface"]
+pub type I2c6 = crate::Periph<i2c::RegisterBlock, 0x74c0_f700>;
+impl core::fmt::Debug for I2c6 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("I2c6").finish()
+    }
+}
+#[doc = "i2c interface"]
+pub use self::i2c as i2c6;
+#[doc = "i2c interface"]
+pub type I2c7 = crate::Periph<i2c::RegisterBlock, 0x74c0_f800>;
+impl core::fmt::Debug for I2c7 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("I2c7").finish()
+    }
+}
+#[doc = "i2c interface"]
+pub use self::i2c as i2c7;
+#[doc = "i2c interface"]
+pub type I2c8 = crate::Periph<i2c::RegisterBlock, 0x74c0_f900>;
+impl core::fmt::Debug for I2c8 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("I2c8").finish()
+    }
+}
+#[doc = "i2c interface"]
+pub use self::i2c as i2c8;
+#[doc = "i2c interface"]
+pub type I2c9 = crate::Periph<i2c::RegisterBlock, 0x74c0_fa00>;
+impl core::fmt::Debug for I2c9 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("I2c9").finish()
+    }
+}
+#[doc = "i2c interface"]
+pub use self::i2c as i2c9;
+#[doc = "i2c interface"]
+pub type I2c10 = crate::Periph<i2c::RegisterBlock, 0x74c0_fb00>;
+impl core::fmt::Debug for I2c10 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("I2c10").finish()
+    }
+}
+#[doc = "i2c interface"]
+pub use self::i2c as i2c10;
+#[doc = "i2c interface"]
+pub type I2c11 = crate::Periph<i2c::RegisterBlock, 0x74c0_fc00>;
+impl core::fmt::Debug for I2c11 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("I2c11").finish()
+    }
+}
+#[doc = "i2c interface"]
+pub use self::i2c as i2c11;
+#[doc = "i2c interface"]
+pub type I2c12 = crate::Periph<i2c::RegisterBlock, 0x74c0_fd00>;
+impl core::fmt::Debug for I2c12 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("I2c12").finish()
+    }
+}
+#[doc = "i2c interface"]
+pub use self::i2c as i2c12;
+#[doc = "i2c interface"]
+pub type I2c13 = crate::Periph<i2c::RegisterBlock, 0x74c0_fe00>;
+impl core::fmt::Debug for I2c13 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("I2c13").finish()
+    }
+}
+#[doc = "i2c interface"]
+pub use self::i2c as i2c13;
+#[doc = "wdt"]
+pub type Wdt = crate::Periph<wdt::RegisterBlock, 0x74c0_3000>;
+impl core::fmt::Debug for Wdt {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Wdt").finish()
+    }
+}
+#[doc = "wdt"]
+pub mod wdt;
+#[doc = "wdt interface"]
+pub type Wdt1 = crate::Periph<wdt::RegisterBlock, 0x74c0_3080>;
+impl core::fmt::Debug for Wdt1 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Wdt1").finish()
+    }
+}
+#[doc = "wdt interface"]
+pub use self::wdt as wdt1;
+#[doc = "wdt interface"]
+pub type Wdt2 = crate::Periph<wdt::RegisterBlock, 0x74c0_3100>;
+impl core::fmt::Debug for Wdt2 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Wdt2").finish()
+    }
+}
+#[doc = "wdt interface"]
+pub use self::wdt as wdt2;
+#[doc = "wdt interface"]
+pub type Wdt3 = crate::Periph<wdt::RegisterBlock, 0x74c0_3180>;
+impl core::fmt::Debug for Wdt3 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Wdt3").finish()
+    }
+}
+#[doc = "wdt interface"]
+pub use self::wdt as wdt3;
+#[doc = "wdt interface"]
+pub type Wdt4 = crate::Periph<wdt::RegisterBlock, 0x74c0_3200>;
+impl core::fmt::Debug for Wdt4 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Wdt4").finish()
+    }
+}
+#[doc = "wdt interface"]
+pub use self::wdt as wdt4;
+#[doc = "wdt interface"]
+pub type Wdt5 = crate::Periph<wdt::RegisterBlock, 0x74c0_3280>;
+impl core::fmt::Debug for Wdt5 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Wdt5").finish()
+    }
+}
+#[doc = "wdt interface"]
+pub use self::wdt as wdt5;
+#[doc = "wdt interface"]
+pub type Wdt6 = crate::Periph<wdt::RegisterBlock, 0x74c0_3300>;
+impl core::fmt::Debug for Wdt6 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Wdt6").finish()
+    }
+}
+#[doc = "wdt interface"]
+pub use self::wdt as wdt6;
+#[doc = "wdt interface"]
+pub type Wdt7 = crate::Periph<wdt::RegisterBlock, 0x74c0_3380>;
+impl core::fmt::Debug for Wdt7 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Wdt7").finish()
+    }
+}
+#[doc = "wdt interface"]
+pub use self::wdt as wdt7;
+#[doc = "timer"]
+pub type Timer = crate::Periph<timer::RegisterBlock, 0x74c3_a000>;
+impl core::fmt::Debug for Timer {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Timer").finish()
+    }
+}
+#[doc = "timer"]
+pub mod timer;
+#[doc = "timer interface"]
+pub type Timer1 = crate::Periph<timer::RegisterBlock, 0x74c3_a040>;
+impl core::fmt::Debug for Timer1 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Timer1").finish()
+    }
+}
+#[doc = "timer interface"]
+pub use self::timer as timer1;
+#[doc = "timer interface"]
+pub type Timer2 = crate::Periph<timer::RegisterBlock, 0x74c3_a080>;
+impl core::fmt::Debug for Timer2 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Timer2").finish()
+    }
+}
+#[doc = "timer interface"]
+pub use self::timer as timer2;
+#[doc = "timer interface"]
+pub type Timer3 = crate::Periph<timer::RegisterBlock, 0x74c3_a0c0>;
+impl core::fmt::Debug for Timer3 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Timer3").finish()
+    }
+}
+#[doc = "timer interface"]
+pub use self::timer as timer3;
+#[doc = "timer interface"]
+pub type Timer4 = crate::Periph<timer::RegisterBlock, 0x74c3_a100>;
+impl core::fmt::Debug for Timer4 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Timer4").finish()
+    }
+}
+#[doc = "timer interface"]
+pub use self::timer as timer4;
+#[doc = "timer interface"]
+pub type Timer5 = crate::Periph<timer::RegisterBlock, 0x74c3_a140>;
+impl core::fmt::Debug for Timer5 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Timer5").finish()
+    }
+}
+#[doc = "timer interface"]
+pub use self::timer as timer5;
+#[doc = "timer interface"]
+pub type Timer6 = crate::Periph<timer::RegisterBlock, 0x74c3_a180>;
+impl core::fmt::Debug for Timer6 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Timer6").finish()
+    }
+}
+#[doc = "timer interface"]
+pub use self::timer as timer6;
+#[doc = "timer interface"]
+pub type Timer7 = crate::Periph<timer::RegisterBlock, 0x74c3_a1c0>;
+impl core::fmt::Debug for Timer7 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Timer7").finish()
+    }
+}
+#[doc = "timer interface"]
+pub use self::timer as timer7;
 #[doc = "sprot"]
 pub type Sprot = crate::Periph<sprot::RegisterBlock, 0x7400_0800>;
 impl core::fmt::Debug for Sprot {
@@ -264,6 +964,186 @@ impl core::fmt::Debug for Spipf2 {
 }
 #[doc = "spipf interface"]
 pub use self::spipf as spipf2;
+#[doc = "adc"]
+pub type Adc = crate::Periph<adc::RegisterBlock, 0x74c0_0000>;
+impl core::fmt::Debug for Adc {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Adc").finish()
+    }
+}
+#[doc = "adc"]
+pub mod adc;
+#[doc = "usb20"]
+pub type Usb20 = crate::Periph<usb20::RegisterBlock, 0>;
+impl core::fmt::Debug for Usb20 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Usb20").finish()
+    }
+}
+#[doc = "usb20"]
+pub mod usb20;
+#[doc = "usb20 interface"]
+pub type Usb201 = crate::Periph<usb20::RegisterBlock, 0x7412_2000>;
+impl core::fmt::Debug for Usb201 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Usb201").finish()
+    }
+}
+#[doc = "usb20 interface"]
+pub use self::usb20 as usb201;
+#[doc = "uhci"]
+pub type Uhci = crate::Periph<uhci::RegisterBlock, 0x7411_0000>;
+impl core::fmt::Debug for Uhci {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Uhci").finish()
+    }
+}
+#[doc = "uhci"]
+pub mod uhci;
+#[doc = "ehci"]
+pub type Ehci = crate::Periph<ehci::RegisterBlock, 0x7412_1000>;
+impl core::fmt::Debug for Ehci {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Ehci").finish()
+    }
+}
+#[doc = "ehci"]
+pub mod ehci;
+#[doc = "ehci interface"]
+pub type Ehci1 = crate::Periph<ehci::RegisterBlock, 0x7412_3000>;
+impl core::fmt::Debug for Ehci1 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Ehci1").finish()
+    }
+}
+#[doc = "ehci interface"]
+pub use self::ehci as ehci1;
+#[doc = "pric_io"]
+pub type PricIo = crate::Periph<pric_io::RegisterBlock, 0x7410_0000>;
+impl core::fmt::Debug for PricIo {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("PricIo").finish()
+    }
+}
+#[doc = "pric_io"]
+pub mod pric_io;
+#[doc = "ipc"]
+pub type Ipc = crate::Periph<ipc::RegisterBlock, 0x74c3_9000>;
+impl core::fmt::Debug for Ipc {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Ipc").finish()
+    }
+}
+#[doc = "ipc"]
+pub mod ipc;
+#[doc = "ipc interface"]
+pub type Ipc1 = crate::Periph<ipc::RegisterBlock, 0x74c3_9100>;
+impl core::fmt::Debug for Ipc1 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Ipc1").finish()
+    }
+}
+#[doc = "ipc interface"]
+pub use self::ipc as ipc1;
+#[doc = "ipc interface"]
+pub type Ipc2 = crate::Periph<ipc::RegisterBlock, 0x74c3_9200>;
+impl core::fmt::Debug for Ipc2 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Ipc2").finish()
+    }
+}
+#[doc = "ipc interface"]
+pub use self::ipc as ipc2;
+#[doc = "ipc interface"]
+pub type Ipc3 = crate::Periph<ipc::RegisterBlock, 0x74c3_9300>;
+impl core::fmt::Debug for Ipc3 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Ipc3").finish()
+    }
+}
+#[doc = "ipc interface"]
+pub use self::ipc as ipc3;
+#[doc = "ipc interface"]
+pub type Ipc4 = crate::Periph<ipc::RegisterBlock, 0x74c3_9400>;
+impl core::fmt::Debug for Ipc4 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Ipc4").finish()
+    }
+}
+#[doc = "ipc interface"]
+pub use self::ipc as ipc4;
+#[doc = "ipc interface"]
+pub type Ipc5 = crate::Periph<ipc::RegisterBlock, 0x74c3_9500>;
+impl core::fmt::Debug for Ipc5 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Ipc5").finish()
+    }
+}
+#[doc = "ipc interface"]
+pub use self::ipc as ipc5;
+#[doc = "jtag"]
+pub type Jtag = crate::Periph<jtag::RegisterBlock, 0x74c0_1000>;
+impl core::fmt::Debug for Jtag {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Jtag").finish()
+    }
+}
+#[doc = "jtag"]
+pub mod jtag;
+#[doc = "otp_reg"]
+pub type OtpReg = crate::Periph<otp_reg::RegisterBlock, 0x74c0_7000>;
+impl core::fmt::Debug for OtpReg {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("OtpReg").finish()
+    }
+}
+#[doc = "otp_reg"]
+pub mod otp_reg;
+#[doc = "io_ahb_matrix"]
+pub type IoAhbMatrix = crate::Periph<io_ahb_matrix::RegisterBlock, 0x740b_0000>;
+impl core::fmt::Debug for IoAhbMatrix {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("IoAhbMatrix").finish()
+    }
+}
+#[doc = "io_ahb_matrix"]
+pub mod io_ahb_matrix;
+#[doc = "rtc"]
+pub type Rtc = crate::Periph<rtc::RegisterBlock, 0x74c3_4000>;
+impl core::fmt::Debug for Rtc {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Rtc").finish()
+    }
+}
+#[doc = "rtc"]
+pub mod rtc;
+#[doc = "vic"]
+pub type Vic = crate::Periph<vic::RegisterBlock, 0x7413_0000>;
+impl core::fmt::Debug for Vic {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Vic").finish()
+    }
+}
+#[doc = "vic"]
+pub mod vic;
+#[doc = "at"]
+pub type At = crate::Periph<at::RegisterBlock, 0x74c3_5000>;
+impl core::fmt::Debug for At {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("At").finish()
+    }
+}
+#[doc = "at"]
+pub mod at;
+#[doc = "gsram"]
+pub type Gsram = crate::Periph<gsram::RegisterBlock, 0x74b8_0000>;
+impl core::fmt::Debug for Gsram {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("Gsram").finish()
+    }
+}
+#[doc = "gsram"]
+pub mod gsram;
 #[no_mangle]
 static mut DEVICE_PERIPHERALS: bool = false;
 #[doc = r" All the peripherals."]
@@ -275,6 +1155,106 @@ pub struct Peripherals {
     pub spi1: Spi1,
     #[doc = "spi2"]
     pub spi2: Spi2,
+    #[doc = "i3c"]
+    pub i3c: I3c,
+    #[doc = "i3c1"]
+    pub i3c1: I3c1,
+    #[doc = "i3c2"]
+    pub i3c2: I3c2,
+    #[doc = "i3c3"]
+    pub i3c3: I3c3,
+    #[doc = "i3c4"]
+    pub i3c4: I3c4,
+    #[doc = "i3c5"]
+    pub i3c5: I3c5,
+    #[doc = "i3c6"]
+    pub i3c6: I3c6,
+    #[doc = "i3c7"]
+    pub i3c7: I3c7,
+    #[doc = "gpio"]
+    pub gpio: Gpio,
+    #[doc = "sgpio"]
+    pub sgpio: Sgpio,
+    #[doc = "sgpio1"]
+    pub sgpio1: Sgpio1,
+    #[doc = "scu"]
+    pub scu: Scu,
+    #[doc = "uart"]
+    pub uart: Uart,
+    #[doc = "uart1"]
+    pub uart1: Uart1,
+    #[doc = "uart2"]
+    pub uart2: Uart2,
+    #[doc = "uart3"]
+    pub uart3: Uart3,
+    #[doc = "uart4"]
+    pub uart4: Uart4,
+    #[doc = "uart5"]
+    pub uart5: Uart5,
+    #[doc = "uartdma"]
+    pub uartdma: Uartdma,
+    #[doc = "i2cglobal"]
+    pub i2cglobal: I2cglobal,
+    #[doc = "i2c"]
+    pub i2c: I2c,
+    #[doc = "i2c1"]
+    pub i2c1: I2c1,
+    #[doc = "i2c2"]
+    pub i2c2: I2c2,
+    #[doc = "i2c3"]
+    pub i2c3: I2c3,
+    #[doc = "i2c4"]
+    pub i2c4: I2c4,
+    #[doc = "i2c5"]
+    pub i2c5: I2c5,
+    #[doc = "i2c6"]
+    pub i2c6: I2c6,
+    #[doc = "i2c7"]
+    pub i2c7: I2c7,
+    #[doc = "i2c8"]
+    pub i2c8: I2c8,
+    #[doc = "i2c9"]
+    pub i2c9: I2c9,
+    #[doc = "i2c10"]
+    pub i2c10: I2c10,
+    #[doc = "i2c11"]
+    pub i2c11: I2c11,
+    #[doc = "i2c12"]
+    pub i2c12: I2c12,
+    #[doc = "i2c13"]
+    pub i2c13: I2c13,
+    #[doc = "wdt"]
+    pub wdt: Wdt,
+    #[doc = "wdt1"]
+    pub wdt1: Wdt1,
+    #[doc = "wdt2"]
+    pub wdt2: Wdt2,
+    #[doc = "wdt3"]
+    pub wdt3: Wdt3,
+    #[doc = "wdt4"]
+    pub wdt4: Wdt4,
+    #[doc = "wdt5"]
+    pub wdt5: Wdt5,
+    #[doc = "wdt6"]
+    pub wdt6: Wdt6,
+    #[doc = "wdt7"]
+    pub wdt7: Wdt7,
+    #[doc = "timer"]
+    pub timer: Timer,
+    #[doc = "timer1"]
+    pub timer1: Timer1,
+    #[doc = "timer2"]
+    pub timer2: Timer2,
+    #[doc = "timer3"]
+    pub timer3: Timer3,
+    #[doc = "timer4"]
+    pub timer4: Timer4,
+    #[doc = "timer5"]
+    pub timer5: Timer5,
+    #[doc = "timer6"]
+    pub timer6: Timer6,
+    #[doc = "timer7"]
+    pub timer7: Timer7,
     #[doc = "sprot"]
     pub sprot: Sprot,
     #[doc = "sprot1"]
@@ -289,6 +1269,46 @@ pub struct Peripherals {
     pub spipf1: Spipf1,
     #[doc = "spipf2"]
     pub spipf2: Spipf2,
+    #[doc = "adc"]
+    pub adc: Adc,
+    #[doc = "usb20"]
+    pub usb20: Usb20,
+    #[doc = "usb201"]
+    pub usb201: Usb201,
+    #[doc = "uhci"]
+    pub uhci: Uhci,
+    #[doc = "ehci"]
+    pub ehci: Ehci,
+    #[doc = "ehci1"]
+    pub ehci1: Ehci1,
+    #[doc = "pric_io"]
+    pub pric_io: PricIo,
+    #[doc = "ipc"]
+    pub ipc: Ipc,
+    #[doc = "ipc1"]
+    pub ipc1: Ipc1,
+    #[doc = "ipc2"]
+    pub ipc2: Ipc2,
+    #[doc = "ipc3"]
+    pub ipc3: Ipc3,
+    #[doc = "ipc4"]
+    pub ipc4: Ipc4,
+    #[doc = "ipc5"]
+    pub ipc5: Ipc5,
+    #[doc = "jtag"]
+    pub jtag: Jtag,
+    #[doc = "otp_reg"]
+    pub otp_reg: OtpReg,
+    #[doc = "io_ahb_matrix"]
+    pub io_ahb_matrix: IoAhbMatrix,
+    #[doc = "rtc"]
+    pub rtc: Rtc,
+    #[doc = "vic"]
+    pub vic: Vic,
+    #[doc = "at"]
+    pub at: At,
+    #[doc = "gsram"]
+    pub gsram: Gsram,
 }
 impl Peripherals {
     #[doc = r" Returns all the peripherals *once*."]
@@ -314,6 +1334,56 @@ impl Peripherals {
             spi: Spi::steal(),
             spi1: Spi1::steal(),
             spi2: Spi2::steal(),
+            i3c: I3c::steal(),
+            i3c1: I3c1::steal(),
+            i3c2: I3c2::steal(),
+            i3c3: I3c3::steal(),
+            i3c4: I3c4::steal(),
+            i3c5: I3c5::steal(),
+            i3c6: I3c6::steal(),
+            i3c7: I3c7::steal(),
+            gpio: Gpio::steal(),
+            sgpio: Sgpio::steal(),
+            sgpio1: Sgpio1::steal(),
+            scu: Scu::steal(),
+            uart: Uart::steal(),
+            uart1: Uart1::steal(),
+            uart2: Uart2::steal(),
+            uart3: Uart3::steal(),
+            uart4: Uart4::steal(),
+            uart5: Uart5::steal(),
+            uartdma: Uartdma::steal(),
+            i2cglobal: I2cglobal::steal(),
+            i2c: I2c::steal(),
+            i2c1: I2c1::steal(),
+            i2c2: I2c2::steal(),
+            i2c3: I2c3::steal(),
+            i2c4: I2c4::steal(),
+            i2c5: I2c5::steal(),
+            i2c6: I2c6::steal(),
+            i2c7: I2c7::steal(),
+            i2c8: I2c8::steal(),
+            i2c9: I2c9::steal(),
+            i2c10: I2c10::steal(),
+            i2c11: I2c11::steal(),
+            i2c12: I2c12::steal(),
+            i2c13: I2c13::steal(),
+            wdt: Wdt::steal(),
+            wdt1: Wdt1::steal(),
+            wdt2: Wdt2::steal(),
+            wdt3: Wdt3::steal(),
+            wdt4: Wdt4::steal(),
+            wdt5: Wdt5::steal(),
+            wdt6: Wdt6::steal(),
+            wdt7: Wdt7::steal(),
+            timer: Timer::steal(),
+            timer1: Timer1::steal(),
+            timer2: Timer2::steal(),
+            timer3: Timer3::steal(),
+            timer4: Timer4::steal(),
+            timer5: Timer5::steal(),
+            timer6: Timer6::steal(),
+            timer7: Timer7::steal(),
             sprot: Sprot::steal(),
             sprot1: Sprot1::steal(),
             sprot2: Sprot2::steal(),
@@ -321,6 +1391,26 @@ impl Peripherals {
             spipf: Spipf::steal(),
             spipf1: Spipf1::steal(),
             spipf2: Spipf2::steal(),
+            adc: Adc::steal(),
+            usb20: Usb20::steal(),
+            usb201: Usb201::steal(),
+            uhci: Uhci::steal(),
+            ehci: Ehci::steal(),
+            ehci1: Ehci1::steal(),
+            pric_io: PricIo::steal(),
+            ipc: Ipc::steal(),
+            ipc1: Ipc1::steal(),
+            ipc2: Ipc2::steal(),
+            ipc3: Ipc3::steal(),
+            ipc4: Ipc4::steal(),
+            ipc5: Ipc5::steal(),
+            jtag: Jtag::steal(),
+            otp_reg: OtpReg::steal(),
+            io_ahb_matrix: IoAhbMatrix::steal(),
+            rtc: Rtc::steal(),
+            vic: Vic::steal(),
+            at: At::steal(),
+            gsram: Gsram::steal(),
         }
     }
 }
