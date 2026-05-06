@@ -2,29 +2,36 @@
 pub type R = crate::R<UartrbrSpec>;
 #[doc = "Register `UARTRBR` writer"]
 pub type W = crate::W<UartrbrSpec>;
-#[doc = "Field `UARTRBR` reader - Receiving Buffer Register"]
-pub type UartrbrR = crate::FieldReader;
-#[doc = "Field `UARTTHR` reader - Transmit Holding Register"]
-pub type UartthrR = crate::FieldReader;
-#[doc = "Field `UARTTHR` writer - Transmit Holding Register"]
-pub type UartthrW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
+#[doc = "Field `UARTRBRReceivingBufferReg` reader - UART_RBR: Receiving Buffer Register"]
+pub type UartrbrreceivingBufferRegR = crate::FieldReader;
+#[doc = "Field `UARTTHRTxHoldingReg` reader - UART_THR: Transmit Holding Register"]
+pub type UartthrtxHoldingRegR = crate::FieldReader;
+#[doc = "Field `UARTTHRTxHoldingReg` writer - UART_THR: Transmit Holding Register"]
+pub type UartthrtxHoldingRegW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
+#[doc = "Field `Reserved0` reader - Reserved (0)"]
+pub type Reserved0R = crate::FieldReader<u32>;
 impl R {
-    #[doc = "Bits 0:7 - Receiving Buffer Register"]
+    #[doc = "Bits 0:7 - UART_RBR: Receiving Buffer Register"]
     #[inline(always)]
-    pub fn uartrbr(&self) -> UartrbrR {
-        UartrbrR::new((self.bits & 0xff) as u8)
+    pub fn uartrbrreceiving_buffer_reg(&self) -> UartrbrreceivingBufferRegR {
+        UartrbrreceivingBufferRegR::new((self.bits & 0xff) as u8)
     }
-    #[doc = "Bits 0:7 - Transmit Holding Register"]
+    #[doc = "Bits 0:7 - UART_THR: Transmit Holding Register"]
     #[inline(always)]
-    pub fn uartthr(&self) -> UartthrR {
-        UartthrR::new((self.bits & 0xff) as u8)
+    pub fn uartthrtx_holding_reg(&self) -> UartthrtxHoldingRegR {
+        UartthrtxHoldingRegR::new((self.bits & 0xff) as u8)
+    }
+    #[doc = "Bits 8:31 - Reserved (0)"]
+    #[inline(always)]
+    pub fn reserved0(&self) -> Reserved0R {
+        Reserved0R::new((self.bits >> 8) & 0x00ff_ffff)
     }
 }
 impl W {
-    #[doc = "Bits 0:7 - Transmit Holding Register"]
+    #[doc = "Bits 0:7 - UART_THR: Transmit Holding Register"]
     #[inline(always)]
-    pub fn uartthr(&mut self) -> UartthrW<UartrbrSpec> {
-        UartthrW::new(self, 0)
+    pub fn uartthrtx_holding_reg(&mut self) -> UartthrtxHoldingRegW<UartrbrSpec> {
+        UartthrtxHoldingRegW::new(self, 0)
     }
 }
 #[doc = "Receiving Buffer Register (DLAB = 0)\n\nYou can [`read`](crate::Reg::read) this register and get [`uartrbr::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`uartrbr::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

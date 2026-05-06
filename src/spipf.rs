@@ -12,8 +12,7 @@ pub struct RegisterBlock {
     spipf020: Spipf020,
     _reserved8: [u8; 0x58],
     spipf07c: Spipf07c,
-    spipfwt: Spipfwt,
-    _reserved10: [u8; 0x7c],
+    spipfwt: [Spipfwt; 32],
     spipf100: Spipf100,
     spipf108: Spipf108,
     spipf110: Spipf110,
@@ -125,10 +124,16 @@ impl RegisterBlock {
     pub const fn spipf07c(&self) -> &Spipf07c {
         &self.spipf07c
     }
-    #[doc = "0x80 - Allow Command Table \\#1 $\\sim$ \\#32"]
+    #[doc = "0x80..0x100 - Allow Command Table \\#1 $\\sim$ \\#32"]
     #[inline(always)]
-    pub const fn spipfwt(&self) -> &Spipfwt {
-        &self.spipfwt
+    pub const fn spipfwt(&self, n: usize) -> &Spipfwt {
+        &self.spipfwt[n]
+    }
+    #[doc = "Iterator for array of:"]
+    #[doc = "0x80..0x100 - Allow Command Table \\#1 $\\sim$ \\#32"]
+    #[inline(always)]
+    pub fn spipfwt_iter(&self) -> impl Iterator<Item = &Spipfwt> {
+        self.spipfwt.iter()
     }
     #[doc = "0x100..0x108 - Region 00 setting"]
     #[inline(always)]

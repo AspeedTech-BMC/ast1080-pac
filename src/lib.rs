@@ -28,8 +28,7 @@ extern "C" {
     fn adc();
     fn gpio();
     fn sgpio();
-    fn spipf1();
-    fn spipf2();
+    fn sgpio1();
     fn rtc();
     fn timer();
     fn timer1();
@@ -180,8 +179,8 @@ pub static __INTERRUPTS: [Vector; 180] = [
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
     Vector { _reserved: 0 },
-    Vector { _handler: spipf1 },
-    Vector { _handler: spipf2 },
+    Vector { _handler: sgpio1 },
+    Vector { _reserved: 0 },
     Vector { _reserved: 0 },
     Vector { _handler: rtc },
     Vector { _handler: timer },
@@ -313,10 +312,8 @@ pub enum Interrupt {
     gpio = 82,
     #[doc = "84 - sgpio"]
     sgpio = 84,
-    #[doc = "88 - spipf1"]
-    spipf1 = 88,
-    #[doc = "89 - spipf2"]
-    spipf2 = 89,
+    #[doc = "88 - sgpio1"]
+    sgpio1 = 88,
     #[doc = "91 - rtc"]
     rtc = 91,
     #[doc = "92 - timer"]
@@ -569,7 +566,7 @@ impl core::fmt::Debug for Uart {
 #[doc = "uart"]
 pub mod uart;
 #[doc = "uart interface"]
-pub type Uart1 = crate::Periph<uart::RegisterBlock, 0x74c3_4000>;
+pub type Uart1 = crate::Periph<uart::RegisterBlock, 0x74c3_3100>;
 impl core::fmt::Debug for Uart1 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("Uart1").finish()
@@ -578,7 +575,7 @@ impl core::fmt::Debug for Uart1 {
 #[doc = "uart interface"]
 pub use self::uart as uart1;
 #[doc = "uart interface"]
-pub type Uart2 = crate::Periph<uart::RegisterBlock, 0x74c3_5000>;
+pub type Uart2 = crate::Periph<uart::RegisterBlock, 0x74c3_3200>;
 impl core::fmt::Debug for Uart2 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("Uart2").finish()
@@ -587,7 +584,7 @@ impl core::fmt::Debug for Uart2 {
 #[doc = "uart interface"]
 pub use self::uart as uart2;
 #[doc = "uart interface"]
-pub type Uart3 = crate::Periph<uart::RegisterBlock, 0x74c3_6000>;
+pub type Uart3 = crate::Periph<uart::RegisterBlock, 0x74c3_3300>;
 impl core::fmt::Debug for Uart3 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("Uart3").finish()
@@ -596,7 +593,7 @@ impl core::fmt::Debug for Uart3 {
 #[doc = "uart interface"]
 pub use self::uart as uart3;
 #[doc = "uart interface"]
-pub type Uart4 = crate::Periph<uart::RegisterBlock, 0x74c3_7000>;
+pub type Uart4 = crate::Periph<uart::RegisterBlock, 0x74c3_3400>;
 impl core::fmt::Debug for Uart4 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("Uart4").finish()
@@ -605,7 +602,7 @@ impl core::fmt::Debug for Uart4 {
 #[doc = "uart interface"]
 pub use self::uart as uart4;
 #[doc = "uart interface"]
-pub type Uart5 = crate::Periph<uart::RegisterBlock, 0x74c3_f000>;
+pub type Uart5 = crate::Periph<uart::RegisterBlock, 0x74c3_3c00>;
 impl core::fmt::Debug for Uart5 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("Uart5").finish()
@@ -757,6 +754,132 @@ impl core::fmt::Debug for I2c13 {
 }
 #[doc = "i2c interface"]
 pub use self::i2c as i2c13;
+#[doc = "i2cbuff"]
+pub type I2cbuff = crate::Periph<i2cbuff::RegisterBlock, 0x74c0_f1a0>;
+impl core::fmt::Debug for I2cbuff {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("I2cbuff").finish()
+    }
+}
+#[doc = "i2cbuff"]
+pub mod i2cbuff;
+#[doc = "i2cbuff interface"]
+pub type I2cbuff1 = crate::Periph<i2cbuff::RegisterBlock, 0x74c0_f2a0>;
+impl core::fmt::Debug for I2cbuff1 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("I2cbuff1").finish()
+    }
+}
+#[doc = "i2cbuff interface"]
+pub use self::i2cbuff as i2cbuff1;
+#[doc = "i2cbuff interface"]
+pub type I2cbuff2 = crate::Periph<i2cbuff::RegisterBlock, 0x74c0_f3a0>;
+impl core::fmt::Debug for I2cbuff2 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("I2cbuff2").finish()
+    }
+}
+#[doc = "i2cbuff interface"]
+pub use self::i2cbuff as i2cbuff2;
+#[doc = "i2cbuff interface"]
+pub type I2cbuff3 = crate::Periph<i2cbuff::RegisterBlock, 0x74c0_f4a0>;
+impl core::fmt::Debug for I2cbuff3 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("I2cbuff3").finish()
+    }
+}
+#[doc = "i2cbuff interface"]
+pub use self::i2cbuff as i2cbuff3;
+#[doc = "i2cbuff interface"]
+pub type I2cbuff4 = crate::Periph<i2cbuff::RegisterBlock, 0x74c0_f5a0>;
+impl core::fmt::Debug for I2cbuff4 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("I2cbuff4").finish()
+    }
+}
+#[doc = "i2cbuff interface"]
+pub use self::i2cbuff as i2cbuff4;
+#[doc = "i2cbuff interface"]
+pub type I2cbuff5 = crate::Periph<i2cbuff::RegisterBlock, 0x74c0_f6a0>;
+impl core::fmt::Debug for I2cbuff5 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("I2cbuff5").finish()
+    }
+}
+#[doc = "i2cbuff interface"]
+pub use self::i2cbuff as i2cbuff5;
+#[doc = "i2cbuff interface"]
+pub type I2cbuff6 = crate::Periph<i2cbuff::RegisterBlock, 0x74c0_f7a0>;
+impl core::fmt::Debug for I2cbuff6 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("I2cbuff6").finish()
+    }
+}
+#[doc = "i2cbuff interface"]
+pub use self::i2cbuff as i2cbuff6;
+#[doc = "i2cbuff interface"]
+pub type I2cbuff7 = crate::Periph<i2cbuff::RegisterBlock, 0x74c0_f8a0>;
+impl core::fmt::Debug for I2cbuff7 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("I2cbuff7").finish()
+    }
+}
+#[doc = "i2cbuff interface"]
+pub use self::i2cbuff as i2cbuff7;
+#[doc = "i2cbuff interface"]
+pub type I2cbuff8 = crate::Periph<i2cbuff::RegisterBlock, 0x74c0_f9a0>;
+impl core::fmt::Debug for I2cbuff8 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("I2cbuff8").finish()
+    }
+}
+#[doc = "i2cbuff interface"]
+pub use self::i2cbuff as i2cbuff8;
+#[doc = "i2cbuff interface"]
+pub type I2cbuff9 = crate::Periph<i2cbuff::RegisterBlock, 0x74c0_faa0>;
+impl core::fmt::Debug for I2cbuff9 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("I2cbuff9").finish()
+    }
+}
+#[doc = "i2cbuff interface"]
+pub use self::i2cbuff as i2cbuff9;
+#[doc = "i2cbuff interface"]
+pub type I2cbuff10 = crate::Periph<i2cbuff::RegisterBlock, 0x74c0_fba0>;
+impl core::fmt::Debug for I2cbuff10 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("I2cbuff10").finish()
+    }
+}
+#[doc = "i2cbuff interface"]
+pub use self::i2cbuff as i2cbuff10;
+#[doc = "i2cbuff interface"]
+pub type I2cbuff11 = crate::Periph<i2cbuff::RegisterBlock, 0x74c0_fca0>;
+impl core::fmt::Debug for I2cbuff11 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("I2cbuff11").finish()
+    }
+}
+#[doc = "i2cbuff interface"]
+pub use self::i2cbuff as i2cbuff11;
+#[doc = "i2cbuff interface"]
+pub type I2cbuff12 = crate::Periph<i2cbuff::RegisterBlock, 0x74c0_fda0>;
+impl core::fmt::Debug for I2cbuff12 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("I2cbuff12").finish()
+    }
+}
+#[doc = "i2cbuff interface"]
+pub use self::i2cbuff as i2cbuff12;
+#[doc = "i2cbuff interface"]
+pub type I2cbuff13 = crate::Periph<i2cbuff::RegisterBlock, 0x74c0_fea0>;
+impl core::fmt::Debug for I2cbuff13 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("I2cbuff13").finish()
+    }
+}
+#[doc = "i2cbuff interface"]
+pub use self::i2cbuff as i2cbuff13;
 #[doc = "wdt"]
 pub type Wdt = crate::Periph<wdt::RegisterBlock, 0x74c0_3000>;
 impl core::fmt::Debug for Wdt {
@@ -1144,6 +1267,51 @@ impl core::fmt::Debug for Gsram {
 }
 #[doc = "gsram"]
 pub mod gsram;
+#[doc = "i2c_filter"]
+pub type I2cFilter = crate::Periph<i2c_filter::RegisterBlock, 0x74c1_4000>;
+impl core::fmt::Debug for I2cFilter {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("I2cFilter").finish()
+    }
+}
+#[doc = "i2c_filter"]
+pub mod i2c_filter;
+#[doc = "i2c_filter_thr"]
+pub type I2cFilterThr = crate::Periph<i2c_filter_thr::RegisterBlock, 0x74c1_4200>;
+impl core::fmt::Debug for I2cFilterThr {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("I2cFilterThr").finish()
+    }
+}
+#[doc = "i2c_filter_thr"]
+pub mod i2c_filter_thr;
+#[doc = "i2c_filter_thr interface"]
+pub type I2cFilterThr1 = crate::Periph<i2c_filter_thr::RegisterBlock, 0x74c1_4300>;
+impl core::fmt::Debug for I2cFilterThr1 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("I2cFilterThr1").finish()
+    }
+}
+#[doc = "i2c_filter_thr interface"]
+pub use self::i2c_filter_thr as i2c_filter_thr1;
+#[doc = "i2c_filter_thr interface"]
+pub type I2cFilterThr2 = crate::Periph<i2c_filter_thr::RegisterBlock, 0x74c1_4400>;
+impl core::fmt::Debug for I2cFilterThr2 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("I2cFilterThr2").finish()
+    }
+}
+#[doc = "i2c_filter_thr interface"]
+pub use self::i2c_filter_thr as i2c_filter_thr2;
+#[doc = "i2c_filter_thr interface"]
+pub type I2cFilterThr3 = crate::Periph<i2c_filter_thr::RegisterBlock, 0x74c1_4500>;
+impl core::fmt::Debug for I2cFilterThr3 {
+    fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
+        f.debug_struct("I2cFilterThr3").finish()
+    }
+}
+#[doc = "i2c_filter_thr interface"]
+pub use self::i2c_filter_thr as i2c_filter_thr3;
 #[no_mangle]
 static mut DEVICE_PERIPHERALS: bool = false;
 #[doc = r" All the peripherals."]
@@ -1223,6 +1391,34 @@ pub struct Peripherals {
     pub i2c12: I2c12,
     #[doc = "i2c13"]
     pub i2c13: I2c13,
+    #[doc = "i2cbuff"]
+    pub i2cbuff: I2cbuff,
+    #[doc = "i2cbuff1"]
+    pub i2cbuff1: I2cbuff1,
+    #[doc = "i2cbuff2"]
+    pub i2cbuff2: I2cbuff2,
+    #[doc = "i2cbuff3"]
+    pub i2cbuff3: I2cbuff3,
+    #[doc = "i2cbuff4"]
+    pub i2cbuff4: I2cbuff4,
+    #[doc = "i2cbuff5"]
+    pub i2cbuff5: I2cbuff5,
+    #[doc = "i2cbuff6"]
+    pub i2cbuff6: I2cbuff6,
+    #[doc = "i2cbuff7"]
+    pub i2cbuff7: I2cbuff7,
+    #[doc = "i2cbuff8"]
+    pub i2cbuff8: I2cbuff8,
+    #[doc = "i2cbuff9"]
+    pub i2cbuff9: I2cbuff9,
+    #[doc = "i2cbuff10"]
+    pub i2cbuff10: I2cbuff10,
+    #[doc = "i2cbuff11"]
+    pub i2cbuff11: I2cbuff11,
+    #[doc = "i2cbuff12"]
+    pub i2cbuff12: I2cbuff12,
+    #[doc = "i2cbuff13"]
+    pub i2cbuff13: I2cbuff13,
     #[doc = "wdt"]
     pub wdt: Wdt,
     #[doc = "wdt1"]
@@ -1309,6 +1505,16 @@ pub struct Peripherals {
     pub at: At,
     #[doc = "gsram"]
     pub gsram: Gsram,
+    #[doc = "i2c_filter"]
+    pub i2c_filter: I2cFilter,
+    #[doc = "i2c_filter_thr"]
+    pub i2c_filter_thr: I2cFilterThr,
+    #[doc = "i2c_filter_thr1"]
+    pub i2c_filter_thr1: I2cFilterThr1,
+    #[doc = "i2c_filter_thr2"]
+    pub i2c_filter_thr2: I2cFilterThr2,
+    #[doc = "i2c_filter_thr3"]
+    pub i2c_filter_thr3: I2cFilterThr3,
 }
 impl Peripherals {
     #[doc = r" Returns all the peripherals *once*."]
@@ -1368,6 +1574,20 @@ impl Peripherals {
             i2c11: I2c11::steal(),
             i2c12: I2c12::steal(),
             i2c13: I2c13::steal(),
+            i2cbuff: I2cbuff::steal(),
+            i2cbuff1: I2cbuff1::steal(),
+            i2cbuff2: I2cbuff2::steal(),
+            i2cbuff3: I2cbuff3::steal(),
+            i2cbuff4: I2cbuff4::steal(),
+            i2cbuff5: I2cbuff5::steal(),
+            i2cbuff6: I2cbuff6::steal(),
+            i2cbuff7: I2cbuff7::steal(),
+            i2cbuff8: I2cbuff8::steal(),
+            i2cbuff9: I2cbuff9::steal(),
+            i2cbuff10: I2cbuff10::steal(),
+            i2cbuff11: I2cbuff11::steal(),
+            i2cbuff12: I2cbuff12::steal(),
+            i2cbuff13: I2cbuff13::steal(),
             wdt: Wdt::steal(),
             wdt1: Wdt1::steal(),
             wdt2: Wdt2::steal(),
@@ -1411,6 +1631,11 @@ impl Peripherals {
             vic: Vic::steal(),
             at: At::steal(),
             gsram: Gsram::steal(),
+            i2c_filter: I2cFilter::steal(),
+            i2c_filter_thr: I2cFilterThr::steal(),
+            i2c_filter_thr1: I2cFilterThr1::steal(),
+            i2c_filter_thr2: I2cFilterThr2::steal(),
+            i2c_filter_thr3: I2cFilterThr3::steal(),
         }
     }
 }

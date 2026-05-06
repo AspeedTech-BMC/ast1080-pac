@@ -6,11 +6,18 @@ pub type W = crate::W<UartscrSpec>;
 pub type ScratchBitsR = crate::FieldReader;
 #[doc = "Field `ScratchBits` writer - Scratch bits"]
 pub type ScratchBitsW<'a, REG> = crate::FieldWriter<'a, REG, 8>;
+#[doc = "Field `Reserved0` reader - Reserved (0)"]
+pub type Reserved0R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bits 0:7 - Scratch bits"]
     #[inline(always)]
     pub fn scratch_bits(&self) -> ScratchBitsR {
         ScratchBitsR::new((self.bits & 0xff) as u8)
+    }
+    #[doc = "Bits 8:31 - Reserved (0)"]
+    #[inline(always)]
+    pub fn reserved0(&self) -> Reserved0R {
+        Reserved0R::new((self.bits >> 8) & 0x00ff_ffff)
     }
 }
 impl W {

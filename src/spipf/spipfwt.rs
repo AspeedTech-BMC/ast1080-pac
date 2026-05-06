@@ -1,6 +1,6 @@
-#[doc = "Register `SPIPFWT` reader"]
+#[doc = "Register `SPIPFWT[%s]` reader"]
 pub type R = crate::R<SpipfwtSpec>;
-#[doc = "Register `SPIPFWT` writer"]
+#[doc = "Register `SPIPFWT[%s]` writer"]
 pub type W = crate::W<SpipfwtSpec>;
 #[doc = "Field `Cmd` reader - Command"]
 pub type CmdR = crate::FieldReader;
@@ -50,10 +50,47 @@ pub type GenericW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type ValidR = crate::BitReader;
 #[doc = "Field `Valid` writer - Valid"]
 pub type ValidW<'a, REG> = crate::BitWriter<'a, REG>;
+#[doc = "Valid Once\n\nValue on reset: 0"]
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum ValidOnce {
+    #[doc = "0: 0]) comes."]
+    _0Comes = 0,
+}
+impl From<ValidOnce> for bool {
+    #[inline(always)]
+    fn from(variant: ValidOnce) -> Self {
+        variant as u8 != 0
+    }
+}
 #[doc = "Field `ValidOnce` reader - Valid Once"]
-pub type ValidOnceR = crate::BitReader;
+pub type ValidOnceR = crate::BitReader<ValidOnce>;
+impl ValidOnceR {
+    #[doc = "Get enumerated values variant"]
+    #[inline(always)]
+    pub const fn variant(&self) -> Option<ValidOnce> {
+        match self.bits {
+            false => Some(ValidOnce::_0Comes),
+            _ => None,
+        }
+    }
+    #[doc = "0]) comes."]
+    #[inline(always)]
+    pub fn is_0_comes(&self) -> bool {
+        *self == ValidOnce::_0Comes
+    }
+}
 #[doc = "Field `ValidOnce` writer - Valid Once"]
-pub type ValidOnceW<'a, REG> = crate::BitWriter<'a, REG>;
+pub type ValidOnceW<'a, REG> = crate::BitWriter<'a, REG, ValidOnce>;
+impl<'a, REG> ValidOnceW<'a, REG>
+where
+    REG: crate::Writable + crate::RegisterSpec,
+{
+    #[doc = "0]) comes."]
+    #[inline(always)]
+    pub fn _0_comes(self) -> &'a mut crate::W<REG> {
+        self.variant(ValidOnce::_0Comes)
+    }
+}
 impl R {
     #[doc = "Bits 0:7 - Command"]
     #[inline(always)]
@@ -199,5 +236,5 @@ impl crate::Readable for SpipfwtSpec {}
 impl crate::Writable for SpipfwtSpec {
     type Safety = crate::Unsafe;
 }
-#[doc = "`reset()` method sets SPIPFWT to value 0"]
+#[doc = "`reset()` method sets SPIPFWT[%s] to value 0"]
 impl crate::Resettable for SpipfwtSpec {}
