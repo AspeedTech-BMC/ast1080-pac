@@ -2,95 +2,14 @@
 pub type R = crate::R<UartmsrSpec>;
 #[doc = "Register `UARTMSR` writer"]
 pub type W = crate::W<UartmsrSpec>;
-#[doc = "Delta Clear To Send (DCTS) indicator (Read clear)\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum DeltaClearToSendDctsindicatorReadClear {
-    #[doc = "1: The nCTS line has changed its state since the last time the CPU read the MSR."]
-    TheNctsLineHasChangedItsStateSinceTheLastTimeTheCpuReadTheMsr = 1,
-}
-impl From<DeltaClearToSendDctsindicatorReadClear> for bool {
-    #[inline(always)]
-    fn from(variant: DeltaClearToSendDctsindicatorReadClear) -> Self {
-        variant as u8 != 0
-    }
-}
 #[doc = "Field `DeltaClearToSendDCTSIndicatorReadClear` reader - Delta Clear To Send (DCTS) indicator (Read clear)"]
-pub type DeltaClearToSendDctsindicatorReadClearR =
-    crate::BitReader<DeltaClearToSendDctsindicatorReadClear>;
-impl DeltaClearToSendDctsindicatorReadClearR {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub const fn variant(&self) -> Option<DeltaClearToSendDctsindicatorReadClear> {
-        match self . bits { true => Some (DeltaClearToSendDctsindicatorReadClear :: TheNctsLineHasChangedItsStateSinceTheLastTimeTheCpuReadTheMsr) , _ => None , }
-    }
-    #[doc = "The nCTS line has changed its state since the last time the CPU read the MSR."]
-    #[inline(always)]
-    pub fn is_the_ncts_line_has_changed_its_state_since_the_last_time_the_cpu_read_the_msr(
-        &self,
-    ) -> bool {
-        * self == DeltaClearToSendDctsindicatorReadClear :: TheNctsLineHasChangedItsStateSinceTheLastTimeTheCpuReadTheMsr
-    }
-}
-#[doc = "Delta Data Set Ready (DDSR) indicator (Read clear)\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum DeltaDataSetReadyDdsrindicatorReadClear {
-    #[doc = "1: The nDSR line has changed its state since the last time the CPU read the MSR."]
-    TheNdsrLineHasChangedItsStateSinceTheLastTimeTheCpuReadTheMsr = 1,
-}
-impl From<DeltaDataSetReadyDdsrindicatorReadClear> for bool {
-    #[inline(always)]
-    fn from(variant: DeltaDataSetReadyDdsrindicatorReadClear) -> Self {
-        variant as u8 != 0
-    }
-}
+pub type DeltaClearToSendDctsindicatorReadClearR = crate::BitReader;
 #[doc = "Field `DeltaDataSetReadyDDSRIndicatorReadClear` reader - Delta Data Set Ready (DDSR) indicator (Read clear)"]
-pub type DeltaDataSetReadyDdsrindicatorReadClearR =
-    crate::BitReader<DeltaDataSetReadyDdsrindicatorReadClear>;
-impl DeltaDataSetReadyDdsrindicatorReadClearR {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub const fn variant(&self) -> Option<DeltaDataSetReadyDdsrindicatorReadClear> {
-        match self . bits { true => Some (DeltaDataSetReadyDdsrindicatorReadClear :: TheNdsrLineHasChangedItsStateSinceTheLastTimeTheCpuReadTheMsr) , _ => None , }
-    }
-    #[doc = "The nDSR line has changed its state since the last time the CPU read the MSR."]
-    #[inline(always)]
-    pub fn is_the_ndsr_line_has_changed_its_state_since_the_last_time_the_cpu_read_the_msr(
-        &self,
-    ) -> bool {
-        * self == DeltaDataSetReadyDdsrindicatorReadClear :: TheNdsrLineHasChangedItsStateSinceTheLastTimeTheCpuReadTheMsr
-    }
-}
+pub type DeltaDataSetReadyDdsrindicatorReadClearR = crate::BitReader;
 #[doc = "Field `TrailingEdgeOfRingIndicatorTERIDetectorReadClear` reader - Trailing Edge of Ring Indicator (TERI) detector (Read clear)"]
 pub type TrailingEdgeOfRingIndicatorTeridetectorReadClearR = crate::BitReader;
-#[doc = "Delta Data Carrier Detect (DDCD) indicator (Read clear)\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum DeltaDataCarrierDetectDdcdindicatorReadClear {
-    #[doc = "1: The nDCD line has changed its state since the last time the CPU read the MSR."]
-    TheNdcdLineHasChangedItsStateSinceTheLastTimeTheCpuReadTheMsr = 1,
-}
-impl From<DeltaDataCarrierDetectDdcdindicatorReadClear> for bool {
-    #[inline(always)]
-    fn from(variant: DeltaDataCarrierDetectDdcdindicatorReadClear) -> Self {
-        variant as u8 != 0
-    }
-}
 #[doc = "Field `DeltaDataCarrierDetectDDCDIndicatorReadClear` reader - Delta Data Carrier Detect (DDCD) indicator (Read clear)"]
-pub type DeltaDataCarrierDetectDdcdindicatorReadClearR =
-    crate::BitReader<DeltaDataCarrierDetectDdcdindicatorReadClear>;
-impl DeltaDataCarrierDetectDdcdindicatorReadClearR {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub const fn variant(&self) -> Option<DeltaDataCarrierDetectDdcdindicatorReadClear> {
-        match self . bits { true => Some (DeltaDataCarrierDetectDdcdindicatorReadClear :: TheNdcdLineHasChangedItsStateSinceTheLastTimeTheCpuReadTheMsr) , _ => None , }
-    }
-    #[doc = "The nDCD line has changed its state since the last time the CPU read the MSR."]
-    #[inline(always)]
-    pub fn is_the_ndcd_line_has_changed_its_state_since_the_last_time_the_cpu_read_the_msr(
-        &self,
-    ) -> bool {
-        * self == DeltaDataCarrierDetectDdcdindicatorReadClear :: TheNdcdLineHasChangedItsStateSinceTheLastTimeTheCpuReadTheMsr
-    }
-}
+pub type DeltaDataCarrierDetectDdcdindicatorReadClearR = crate::BitReader;
 #[doc = "Field `ComplementOfTheNCTSInputOrEqualsToNRTSMCR1InLoopbackMode` reader - Complement of the nCTS input or equals to nRTS(MCR\\[1\\]) in loopback mode."]
 pub type ComplementOfTheNctsinputOrEqualsToNrtsmcr1inLoopbackModeR = crate::BitReader;
 #[doc = "Field `ComplementOfTheNDSRInputOrEqualsToNDTRMCR0InLoopbackMode` reader - Complement of the nDSR input or equals to nDTR(MCR\\[0\\]) in loopback mode."]

@@ -2,220 +2,22 @@
 pub type R = crate::R<UartierSpec>;
 #[doc = "Register `UARTIER` writer"]
 pub type W = crate::W<UartierSpec>;
-#[doc = "ERBFI: Enable Received Data Available Interrupt\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum ErbfienblRxdDataAvailableInt {
-    #[doc = "0: Disable interrupt"]
-    DisableInterrupt = 0,
-    #[doc = "1: Enable interrupt"]
-    EnableInterrupt = 1,
-}
-impl From<ErbfienblRxdDataAvailableInt> for bool {
-    #[inline(always)]
-    fn from(variant: ErbfienblRxdDataAvailableInt) -> Self {
-        variant as u8 != 0
-    }
-}
 #[doc = "Field `ERBFIEnblRxdDataAvailableINT` reader - ERBFI: Enable Received Data Available Interrupt"]
-pub type ErbfienblRxdDataAvailableIntR = crate::BitReader<ErbfienblRxdDataAvailableInt>;
-impl ErbfienblRxdDataAvailableIntR {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub const fn variant(&self) -> ErbfienblRxdDataAvailableInt {
-        match self.bits {
-            false => ErbfienblRxdDataAvailableInt::DisableInterrupt,
-            true => ErbfienblRxdDataAvailableInt::EnableInterrupt,
-        }
-    }
-    #[doc = "Disable interrupt"]
-    #[inline(always)]
-    pub fn is_disable_interrupt(&self) -> bool {
-        *self == ErbfienblRxdDataAvailableInt::DisableInterrupt
-    }
-    #[doc = "Enable interrupt"]
-    #[inline(always)]
-    pub fn is_enable_interrupt(&self) -> bool {
-        *self == ErbfienblRxdDataAvailableInt::EnableInterrupt
-    }
-}
+pub type ErbfienblRxdDataAvailableIntR = crate::BitReader;
 #[doc = "Field `ERBFIEnblRxdDataAvailableINT` writer - ERBFI: Enable Received Data Available Interrupt"]
-pub type ErbfienblRxdDataAvailableIntW<'a, REG> =
-    crate::BitWriter<'a, REG, ErbfienblRxdDataAvailableInt>;
-impl<'a, REG> ErbfienblRxdDataAvailableIntW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
-    #[doc = "Disable interrupt"]
-    #[inline(always)]
-    pub fn disable_interrupt(self) -> &'a mut crate::W<REG> {
-        self.variant(ErbfienblRxdDataAvailableInt::DisableInterrupt)
-    }
-    #[doc = "Enable interrupt"]
-    #[inline(always)]
-    pub fn enable_interrupt(self) -> &'a mut crate::W<REG> {
-        self.variant(ErbfienblRxdDataAvailableInt::EnableInterrupt)
-    }
-}
-#[doc = "ETBEI: Enable Transmitter Holding Register Empty Interrupt\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum EtbeienblTxterHoldingRegEmptyInt {
-    #[doc = "0: Disable interrupt"]
-    DisableInterrupt = 0,
-    #[doc = "1: Enable interrupt"]
-    EnableInterrupt = 1,
-}
-impl From<EtbeienblTxterHoldingRegEmptyInt> for bool {
-    #[inline(always)]
-    fn from(variant: EtbeienblTxterHoldingRegEmptyInt) -> Self {
-        variant as u8 != 0
-    }
-}
+pub type ErbfienblRxdDataAvailableIntW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ETBEIEnblTxterHoldingRegEmptyINT` reader - ETBEI: Enable Transmitter Holding Register Empty Interrupt"]
-pub type EtbeienblTxterHoldingRegEmptyIntR = crate::BitReader<EtbeienblTxterHoldingRegEmptyInt>;
-impl EtbeienblTxterHoldingRegEmptyIntR {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub const fn variant(&self) -> EtbeienblTxterHoldingRegEmptyInt {
-        match self.bits {
-            false => EtbeienblTxterHoldingRegEmptyInt::DisableInterrupt,
-            true => EtbeienblTxterHoldingRegEmptyInt::EnableInterrupt,
-        }
-    }
-    #[doc = "Disable interrupt"]
-    #[inline(always)]
-    pub fn is_disable_interrupt(&self) -> bool {
-        *self == EtbeienblTxterHoldingRegEmptyInt::DisableInterrupt
-    }
-    #[doc = "Enable interrupt"]
-    #[inline(always)]
-    pub fn is_enable_interrupt(&self) -> bool {
-        *self == EtbeienblTxterHoldingRegEmptyInt::EnableInterrupt
-    }
-}
+pub type EtbeienblTxterHoldingRegEmptyIntR = crate::BitReader;
 #[doc = "Field `ETBEIEnblTxterHoldingRegEmptyINT` writer - ETBEI: Enable Transmitter Holding Register Empty Interrupt"]
-pub type EtbeienblTxterHoldingRegEmptyIntW<'a, REG> =
-    crate::BitWriter<'a, REG, EtbeienblTxterHoldingRegEmptyInt>;
-impl<'a, REG> EtbeienblTxterHoldingRegEmptyIntW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
-    #[doc = "Disable interrupt"]
-    #[inline(always)]
-    pub fn disable_interrupt(self) -> &'a mut crate::W<REG> {
-        self.variant(EtbeienblTxterHoldingRegEmptyInt::DisableInterrupt)
-    }
-    #[doc = "Enable interrupt"]
-    #[inline(always)]
-    pub fn enable_interrupt(self) -> &'a mut crate::W<REG> {
-        self.variant(EtbeienblTxterHoldingRegEmptyInt::EnableInterrupt)
-    }
-}
-#[doc = "ELSI: Enable Receiver Line Status Interrupt\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum ElsienblRxrLineStatusInt {
-    #[doc = "0: Disable interrupt"]
-    DisableInterrupt = 0,
-    #[doc = "1: Enable interrupt"]
-    EnableInterrupt = 1,
-}
-impl From<ElsienblRxrLineStatusInt> for bool {
-    #[inline(always)]
-    fn from(variant: ElsienblRxrLineStatusInt) -> Self {
-        variant as u8 != 0
-    }
-}
+pub type EtbeienblTxterHoldingRegEmptyIntW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `ELSIEnblRxrLineStatusINT` reader - ELSI: Enable Receiver Line Status Interrupt"]
-pub type ElsienblRxrLineStatusIntR = crate::BitReader<ElsienblRxrLineStatusInt>;
-impl ElsienblRxrLineStatusIntR {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub const fn variant(&self) -> ElsienblRxrLineStatusInt {
-        match self.bits {
-            false => ElsienblRxrLineStatusInt::DisableInterrupt,
-            true => ElsienblRxrLineStatusInt::EnableInterrupt,
-        }
-    }
-    #[doc = "Disable interrupt"]
-    #[inline(always)]
-    pub fn is_disable_interrupt(&self) -> bool {
-        *self == ElsienblRxrLineStatusInt::DisableInterrupt
-    }
-    #[doc = "Enable interrupt"]
-    #[inline(always)]
-    pub fn is_enable_interrupt(&self) -> bool {
-        *self == ElsienblRxrLineStatusInt::EnableInterrupt
-    }
-}
+pub type ElsienblRxrLineStatusIntR = crate::BitReader;
 #[doc = "Field `ELSIEnblRxrLineStatusINT` writer - ELSI: Enable Receiver Line Status Interrupt"]
-pub type ElsienblRxrLineStatusIntW<'a, REG> = crate::BitWriter<'a, REG, ElsienblRxrLineStatusInt>;
-impl<'a, REG> ElsienblRxrLineStatusIntW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
-    #[doc = "Disable interrupt"]
-    #[inline(always)]
-    pub fn disable_interrupt(self) -> &'a mut crate::W<REG> {
-        self.variant(ElsienblRxrLineStatusInt::DisableInterrupt)
-    }
-    #[doc = "Enable interrupt"]
-    #[inline(always)]
-    pub fn enable_interrupt(self) -> &'a mut crate::W<REG> {
-        self.variant(ElsienblRxrLineStatusInt::EnableInterrupt)
-    }
-}
-#[doc = "EDSSI: Enable Modem Status Interrupt\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum EdssienblModemStatusInt {
-    #[doc = "0: Disable interrupt"]
-    DisableInterrupt = 0,
-    #[doc = "1: Enable interrupt"]
-    EnableInterrupt = 1,
-}
-impl From<EdssienblModemStatusInt> for bool {
-    #[inline(always)]
-    fn from(variant: EdssienblModemStatusInt) -> Self {
-        variant as u8 != 0
-    }
-}
+pub type ElsienblRxrLineStatusIntW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `EDSSIEnblModemStatusINT` reader - EDSSI: Enable Modem Status Interrupt"]
-pub type EdssienblModemStatusIntR = crate::BitReader<EdssienblModemStatusInt>;
-impl EdssienblModemStatusIntR {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub const fn variant(&self) -> EdssienblModemStatusInt {
-        match self.bits {
-            false => EdssienblModemStatusInt::DisableInterrupt,
-            true => EdssienblModemStatusInt::EnableInterrupt,
-        }
-    }
-    #[doc = "Disable interrupt"]
-    #[inline(always)]
-    pub fn is_disable_interrupt(&self) -> bool {
-        *self == EdssienblModemStatusInt::DisableInterrupt
-    }
-    #[doc = "Enable interrupt"]
-    #[inline(always)]
-    pub fn is_enable_interrupt(&self) -> bool {
-        *self == EdssienblModemStatusInt::EnableInterrupt
-    }
-}
+pub type EdssienblModemStatusIntR = crate::BitReader;
 #[doc = "Field `EDSSIEnblModemStatusINT` writer - EDSSI: Enable Modem Status Interrupt"]
-pub type EdssienblModemStatusIntW<'a, REG> = crate::BitWriter<'a, REG, EdssienblModemStatusInt>;
-impl<'a, REG> EdssienblModemStatusIntW<'a, REG>
-where
-    REG: crate::Writable + crate::RegisterSpec,
-{
-    #[doc = "Disable interrupt"]
-    #[inline(always)]
-    pub fn disable_interrupt(self) -> &'a mut crate::W<REG> {
-        self.variant(EdssienblModemStatusInt::DisableInterrupt)
-    }
-    #[doc = "Enable interrupt"]
-    #[inline(always)]
-    pub fn enable_interrupt(self) -> &'a mut crate::W<REG> {
-        self.variant(EdssienblModemStatusInt::EnableInterrupt)
-    }
-}
+pub type EdssienblModemStatusIntW<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Field `Reserved01` reader - Reserved (0)"]
 pub type Reserved01R = crate::FieldReader;
 #[doc = "Field `Reserved0` reader - Reserved (0)"]

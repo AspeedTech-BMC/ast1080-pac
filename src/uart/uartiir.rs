@@ -4,116 +4,12 @@ pub type R = crate::R<UartiirSpec>;
 pub type W = crate::W<UartiirSpec>;
 #[doc = "Field `IndicatesThatAnINTIsPendingWhenItsLogic0` reader - Indicates that an interrupt is pending when it's logic \"0\"."]
 pub type IndicatesThatAnIntisPendingWhenItsLogic0R = crate::BitReader;
-#[doc = "Interrupt Decoding Table\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-#[repr(u8)]
-pub enum IntdecodingTable {
-    #[doc = "0: Modem Status Changed"]
-    ModemStatusChanged = 0,
-    #[doc = "1: UART\\_THR empty"]
-    UartthrEmpty = 1,
-    #[doc = "2: Received Data Available"]
-    ReceivedDataAvailable = 2,
-    #[doc = "3: Receiver Status"]
-    ReceiverStatus = 3,
-    #[doc = "6: Character Time Out"]
-    CharacterTimeOut = 6,
-}
-impl From<IntdecodingTable> for u8 {
-    #[inline(always)]
-    fn from(variant: IntdecodingTable) -> Self {
-        variant as _
-    }
-}
-impl crate::FieldSpec for IntdecodingTable {
-    type Ux = u8;
-}
-impl crate::IsEnum for IntdecodingTable {}
 #[doc = "Field `INTDecodingTable` reader - Interrupt Decoding Table"]
-pub type IntdecodingTableR = crate::FieldReader<IntdecodingTable>;
-impl IntdecodingTableR {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub const fn variant(&self) -> Option<IntdecodingTable> {
-        match self.bits {
-            0 => Some(IntdecodingTable::ModemStatusChanged),
-            1 => Some(IntdecodingTable::UartthrEmpty),
-            2 => Some(IntdecodingTable::ReceivedDataAvailable),
-            3 => Some(IntdecodingTable::ReceiverStatus),
-            6 => Some(IntdecodingTable::CharacterTimeOut),
-            _ => None,
-        }
-    }
-    #[doc = "Modem Status Changed"]
-    #[inline(always)]
-    pub fn is_modem_status_changed(&self) -> bool {
-        *self == IntdecodingTable::ModemStatusChanged
-    }
-    #[doc = "UART\\_THR empty"]
-    #[inline(always)]
-    pub fn is_uartthr_empty(&self) -> bool {
-        *self == IntdecodingTable::UartthrEmpty
-    }
-    #[doc = "Received Data Available"]
-    #[inline(always)]
-    pub fn is_received_data_available(&self) -> bool {
-        *self == IntdecodingTable::ReceivedDataAvailable
-    }
-    #[doc = "Receiver Status"]
-    #[inline(always)]
-    pub fn is_receiver_status(&self) -> bool {
-        *self == IntdecodingTable::ReceiverStatus
-    }
-    #[doc = "Character Time Out"]
-    #[inline(always)]
-    pub fn is_character_time_out(&self) -> bool {
-        *self == IntdecodingTable::CharacterTimeOut
-    }
-}
+pub type IntdecodingTableR = crate::FieldReader;
 #[doc = "Field `Reserved01` reader - Reserved (0)"]
 pub type Reserved01R = crate::FieldReader;
-#[doc = "FIFO-Enabled Bits\n\nValue on reset: 0"]
-#[derive(Clone, Copy, Debug, PartialEq, Eq)]
-#[repr(u8)]
-pub enum FifoenbldBits {
-    #[doc = "0: FIFOs disabled"]
-    FifosDisabled = 0,
-    #[doc = "3: FIFOs enabled"]
-    FifosEnabled = 3,
-}
-impl From<FifoenbldBits> for u8 {
-    #[inline(always)]
-    fn from(variant: FifoenbldBits) -> Self {
-        variant as _
-    }
-}
-impl crate::FieldSpec for FifoenbldBits {
-    type Ux = u8;
-}
-impl crate::IsEnum for FifoenbldBits {}
 #[doc = "Field `FIFOEnbldBits` reader - FIFO-Enabled Bits"]
-pub type FifoenbldBitsR = crate::FieldReader<FifoenbldBits>;
-impl FifoenbldBitsR {
-    #[doc = "Get enumerated values variant"]
-    #[inline(always)]
-    pub const fn variant(&self) -> Option<FifoenbldBits> {
-        match self.bits {
-            0 => Some(FifoenbldBits::FifosDisabled),
-            3 => Some(FifoenbldBits::FifosEnabled),
-            _ => None,
-        }
-    }
-    #[doc = "FIFOs disabled"]
-    #[inline(always)]
-    pub fn is_fifos_disabled(&self) -> bool {
-        *self == FifoenbldBits::FifosDisabled
-    }
-    #[doc = "FIFOs enabled"]
-    #[inline(always)]
-    pub fn is_fifos_enabled(&self) -> bool {
-        *self == FifoenbldBits::FifosEnabled
-    }
-}
+pub type FifoenbldBitsR = crate::FieldReader;
 #[doc = "Field `Reserved0` reader - Reserved (0)"]
 pub type Reserved0R = crate::FieldReader<u32>;
 impl R {

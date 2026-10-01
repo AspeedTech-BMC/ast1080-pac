@@ -126964,72 +126964,24 @@ permissions and limitations under the License.
 							<description>EDSSI: Enable Modem Status Interrupt</description>
 							<bitRange>[3:3]</bitRange>
 							<access>read-write</access>
-							<enumeratedValues>
-								<enumeratedValue>
-									<name>Disable_Interrupt</name>
-									<description>Disable interrupt</description>
-									<value>0b0</value>
-								</enumeratedValue>
-								<enumeratedValue>
-									<name>Enable_Interrupt</name>
-									<description>Enable interrupt</description>
-									<value>0b1</value>
-								</enumeratedValue>
-							</enumeratedValues>
 						</field>
 						<field>
 							<name>ELSIEnblRxrLineStatusINT</name>
 							<description>ELSI: Enable Receiver Line Status Interrupt</description>
 							<bitRange>[2:2]</bitRange>
 							<access>read-write</access>
-							<enumeratedValues>
-								<enumeratedValue>
-									<name>Disable_Interrupt</name>
-									<description>Disable interrupt</description>
-									<value>0b0</value>
-								</enumeratedValue>
-								<enumeratedValue>
-									<name>Enable_Interrupt</name>
-									<description>Enable interrupt</description>
-									<value>0b1</value>
-								</enumeratedValue>
-							</enumeratedValues>
 						</field>
 						<field>
 							<name>ETBEIEnblTxterHoldingRegEmptyINT</name>
 							<description>ETBEI: Enable Transmitter Holding Register Empty Interrupt</description>
 							<bitRange>[1:1]</bitRange>
 							<access>read-write</access>
-							<enumeratedValues>
-								<enumeratedValue>
-									<name>Disable_Interrupt</name>
-									<description>Disable interrupt</description>
-									<value>0b0</value>
-								</enumeratedValue>
-								<enumeratedValue>
-									<name>Enable_Interrupt</name>
-									<description>Enable interrupt</description>
-									<value>0b1</value>
-								</enumeratedValue>
-							</enumeratedValues>
 						</field>
 						<field>
 							<name>ERBFIEnblRxdDataAvailableINT</name>
 							<description>ERBFI: Enable Received Data Available Interrupt</description>
 							<bitRange>[0:0]</bitRange>
 							<access>read-write</access>
-							<enumeratedValues>
-								<enumeratedValue>
-									<name>Disable_Interrupt</name>
-									<description>Disable interrupt</description>
-									<value>0b0</value>
-								</enumeratedValue>
-								<enumeratedValue>
-									<name>Enable_Interrupt</name>
-									<description>Enable interrupt</description>
-									<value>0b1</value>
-								</enumeratedValue>
-							</enumeratedValues>
 						</field>
 					</fields>
 				</register>
@@ -127054,18 +127006,6 @@ permissions and limitations under the License.
 							<description>FIFO-Enabled Bits</description>
 							<bitRange>[7:6]</bitRange>
 							<access>read-only</access>
-							<enumeratedValues>
-								<enumeratedValue>
-									<name>FIFOs_Disabled</name>
-									<description>FIFOs disabled</description>
-									<value>0b00</value>
-								</enumeratedValue>
-								<enumeratedValue>
-									<name>FIFOs_Enabled</name>
-									<description>FIFOs enabled</description>
-									<value>0b11</value>
-								</enumeratedValue>
-							</enumeratedValues>
 						</field>
 						<field>
 							<name>Reserved01</name>
@@ -127078,33 +127018,6 @@ permissions and limitations under the License.
 							<description>Interrupt Decoding Table</description>
 							<bitRange>[3:1]</bitRange>
 							<access>read-only</access>
-							<enumeratedValues>
-								<enumeratedValue>
-									<name>Modem_Status_Changed</name>
-									<description>Modem Status Changed</description>
-									<value>0b000</value>
-								</enumeratedValue>
-								<enumeratedValue>
-									<name>UARTTHR_Empty</name>
-									<description>UART\_THR empty</description>
-									<value>0b001</value>
-								</enumeratedValue>
-								<enumeratedValue>
-									<name>Received_Data_Available</name>
-									<description>Received Data Available</description>
-									<value>0b010</value>
-								</enumeratedValue>
-								<enumeratedValue>
-									<name>Receiver_Status</name>
-									<description>Receiver Status</description>
-									<value>0b011</value>
-								</enumeratedValue>
-								<enumeratedValue>
-									<name>Character_Time_Out</name>
-									<description>Character Time Out</description>
-									<value>0b110</value>
-								</enumeratedValue>
-							</enumeratedValues>
 						</field>
 						<field>
 							<name>IndicatesThatAnINTIsPendingWhenItsLogic0</name>
@@ -127135,28 +127048,6 @@ permissions and limitations under the License.
 							<description>Define the Receiver FIFO Interrupt trigger level.</description>
 							<bitRange>[7:6]</bitRange>
 							<access>read-write</access>
-							<enumeratedValues>
-								<enumeratedValue>
-									<name>1_Byte__Received</name>
-									<description>1~~ byte  received</description>
-									<value>0b00</value>
-								</enumeratedValue>
-								<enumeratedValue>
-									<name>4_Bytes_Received</name>
-									<description>4~~ bytes received</description>
-									<value>0b01</value>
-								</enumeratedValue>
-								<enumeratedValue>
-									<name>8_Bytes_Received</name>
-									<description>8~~ bytes received</description>
-									<value>0b10</value>
-								</enumeratedValue>
-								<enumeratedValue>
-									<name>14_Bytes_Received</name>
-									<description>14 bytes received</description>
-									<value>0b11</value>
-								</enumeratedValue>
-							</enumeratedValues>
 						</field>
 						<field>
 							<name>Reserved01</name>
@@ -127181,18 +127072,6 @@ permissions and limitations under the License.
 							<description>Enable UART FIFO</description>
 							<bitRange>[0:0]</bitRange>
 							<access>read-write</access>
-							<enumeratedValues>
-								<enumeratedValue>
-									<name>Disable_FIFO</name>
-									<description>Disable FIFO</description>
-									<value>0b0</value>
-								</enumeratedValue>
-								<enumeratedValue>
-									<name>Enable_FIFO</name>
-									<description>Enable FIFO</description>
-									<value>0b1</value>
-								</enumeratedValue>
-							</enumeratedValues>
 						</field>
 					</fields>
 				</register>
@@ -127217,118 +127096,36 @@ permissions and limitations under the License.
 							<description>DLAB: Divisor latch access bit</description>
 							<bitRange>[7:7]</bitRange>
 							<access>read-write</access>
-							<enumeratedValues>
-								<enumeratedValue>
-									<name>The_Normal_Registers_Are_Accessed</name>
-									<description>The normal registers are accessed.</description>
-									<value>0b0</value>
-								</enumeratedValue>
-								<enumeratedValue>
-									<name>The_Divisor_Latches_Can_Be_Accessed</name>
-									<description>The divisor latches can be accessed.</description>
-									<value>0b1</value>
-								</enumeratedValue>
-							</enumeratedValues>
 						</field>
 						<field>
 							<name>BreakCtrlBit</name>
 							<description>Break Control bit.</description>
 							<bitRange>[6:6]</bitRange>
 							<access>read-write</access>
-							<enumeratedValues>
-								<enumeratedValue>
-									<name>Break_Is_Disabled</name>
-									<description>break is disabled.</description>
-									<value>0b0</value>
-								</enumeratedValue>
-								<enumeratedValue>
-									<name>When_Not_In_Loopback_Mode_The_Serial_Out_Is_Forced_Into_Logic_0_Break_State</name>
-									<description>When not in Loopback Mode, the serial out is forced into logic '0' (break state).</description>
-									<value>0b1</value>
-								</enumeratedValue>
-							</enumeratedValues>
 						</field>
 						<field>
 							<name>EPSParityModeSel</name>
 							<description>EPS: Parity mode selection</description>
 							<bitRange>[4:4]</bitRange>
 							<access>read-write</access>
-							<enumeratedValues>
-								<enumeratedValue>
-									<name>Select_Odd_Parity_Mode_Odd_Number_Of_1_For_Data_And_Parity_Combined</name>
-									<description>Select odd parity mode (odd number of "1" for data and parity combined)</description>
-									<value>0b0</value>
-								</enumeratedValue>
-								<enumeratedValue>
-									<name>Select_Even_Parity_Mode_Even_Number_Of_1_For_Data_And_Parity_Combined</name>
-									<description>Select even parity mode (even number of "1" for data and parity combined)</description>
-									<value>0b1</value>
-								</enumeratedValue>
-							</enumeratedValues>
 						</field>
 						<field>
 							<name>PENEnblParityBit</name>
 							<description>PEN: Enable parity bit</description>
 							<bitRange>[3:3]</bitRange>
 							<access>read-write</access>
-							<enumeratedValues>
-								<enumeratedValue>
-									<name>Disable_Parity_Bit</name>
-									<description>Disable parity bit</description>
-									<value>0b0</value>
-								</enumeratedValue>
-								<enumeratedValue>
-									<name>Enable_Parity_Bit</name>
-									<description>Enable parity bit</description>
-									<value>0b1</value>
-								</enumeratedValue>
-							</enumeratedValues>
 						</field>
 						<field>
 							<name>STOPNumberOfStopBitsTxted</name>
 							<description>STOP: Number of stop bits transmitted</description>
 							<bitRange>[2:2]</bitRange>
 							<access>read-write</access>
-							<enumeratedValues>
-								<enumeratedValue>
-									<name>1_Stop_Bit</name>
-									<description>1 stop bit.</description>
-									<value>0b0</value>
-								</enumeratedValue>
-								<enumeratedValue>
-									<name>15_Stop_Bits_When_5bit_Character_Length_Selected_And_2_Bits_Otherwise</name>
-									<description>1.5 stop bits when 5-bit character length selected and 2 bits otherwise</description>
-									<value>0b1</value>
-								</enumeratedValue>
-							</enumeratedValues>
 						</field>
 						<field>
 							<name>CLSSelectNumberOfBitsPerCharacter</name>
 							<description>CLS: Select number of bits per character</description>
 							<bitRange>[1:0]</bitRange>
 							<access>read-write</access>
-							<enumeratedValues>
-								<enumeratedValue>
-									<name>5_Bits</name>
-									<description>5 bits.</description>
-									<value>0b00</value>
-								</enumeratedValue>
-								<enumeratedValue>
-									<name>6_Bits</name>
-									<description>6 bits.</description>
-									<value>0b01</value>
-								</enumeratedValue>
-								<enumeratedValue>
-									<name>7_Bits</name>
-									<description>7 bits.</description>
-									<value>0b10</value>
-								</enumeratedValue>
-								<enumeratedValue>
-									<name>8_Bits</name>
-									<description>8 bits.</description>
-									<value>0b11</value>
-								</enumeratedValue>
-							</enumeratedValues>
 						</field>
 					</fields>
 				</register>
@@ -127353,18 +127150,6 @@ permissions and limitations under the License.
 							<description>Loopback mode.</description>
 							<bitRange>[4:4]</bitRange>
 							<access>read-write</access>
-							<enumeratedValues>
-								<enumeratedValue>
-									<name>Normal_Operation</name>
-									<description>normal operation.</description>
-									<value>0b0</value>
-								</enumeratedValue>
-								<enumeratedValue>
-									<name>Loopback_Mode_When_In_Loopback_Mode_The_Serial_Output_Signal_TXD_Is_Set_To_Logic_1</name>
-									<description>loopback mode. When in loopback mode, the Serial Output Signal (TXD) is set to logic '1'.</description>
-									<value>0b1</value>
-								</enumeratedValue>
-							</enumeratedValues>
 						</field>
 						<field>
 							<name>Out2</name>
@@ -127383,36 +127168,12 @@ permissions and limitations under the License.
 							<description>Request To Send (nRTS) signal control.</description>
 							<bitRange>[1:1]</bitRange>
 							<access>read-write</access>
-							<enumeratedValues>
-								<enumeratedValue>
-									<name>NRTS_Is_1</name>
-									<description>nRTS is '1'</description>
-									<value>0b0</value>
-								</enumeratedValue>
-								<enumeratedValue>
-									<name>NRTS_Is_0</name>
-									<description>nRTS is '0'</description>
-									<value>0b1</value>
-								</enumeratedValue>
-							</enumeratedValues>
 						</field>
 						<field>
 							<name>DataTerminalReadyNDTRSigCtrl</name>
 							<description>Data Terminal Ready (nDTR) signal control.</description>
 							<bitRange>[0:0]</bitRange>
 							<access>read-write</access>
-							<enumeratedValues>
-								<enumeratedValue>
-									<name>NDTR_Is_1</name>
-									<description>nDTR is '1'</description>
-									<value>0b0</value>
-								</enumeratedValue>
-								<enumeratedValue>
-									<name>NDTR_Is_0</name>
-									<description>nDTR is '0'</description>
-									<value>0b1</value>
-								</enumeratedValue>
-							</enumeratedValues>
 						</field>
 					</fields>
 				</register>
@@ -127437,18 +127198,6 @@ permissions and limitations under the License.
 							<description>Error in Receiver FIFO (Read clear)</description>
 							<bitRange>[7:7]</bitRange>
 							<access>read-only</access>
-							<enumeratedValues>
-								<enumeratedValue>
-									<name>There_Is_At_Least_One_Parity_Error_Framing_Error_Or_Break_Indication_In_The_FIFO</name>
-									<description>There is at least one parity error, framing error, or break indication in the FIFO.</description>
-									<value>0b1</value>
-								</enumeratedValue>
-								<enumeratedValue>
-									<name>Otherwise</name>
-									<description>Otherwise.</description>
-									<value>0b0</value>
-								</enumeratedValue>
-							</enumeratedValues>
 						</field>
 						<field>
 							<name>TxterEmpty</name>
@@ -127467,90 +127216,30 @@ permissions and limitations under the License.
 							<description>BI: Break interrupt (Read clear)</description>
 							<bitRange>[4:4]</bitRange>
 							<access>read-only</access>
-							<enumeratedValues>
-								<enumeratedValue>
-									<name>The_Serial_Input_Is_Held_In_A_Logic_0_State_For_Longer_Than_The_Sum</name>
-									<description>The serial input is held in a logic "0" state for longer than the sum</description>
-									<value>0b1</value>
-								</enumeratedValue>
-								<enumeratedValue>
-									<name>No_Break_Condition_In_The_Current_Character</name>
-									<description>No break condition in the current character.</description>
-									<value>0b0</value>
-								</enumeratedValue>
-							</enumeratedValues>
 						</field>
 						<field>
 							<name>FEFramingErrorReadClear</name>
 							<description>FE: Framing error (Read clear)</description>
 							<bitRange>[3:3]</bitRange>
 							<access>read-only</access>
-							<enumeratedValues>
-								<enumeratedValue>
-									<name>There_Is_A_Framing_Error_In_The_Receiver_A_Framing_Error_Occurs_When_The_Receiver</name>
-									<description>There is a framing error in the receiver. A framing error occurs when the receiver</description>
-									<value>0b1</value>
-								</enumeratedValue>
-								<enumeratedValue>
-									<name>No_Framing_Error_In_The_Current_Character</name>
-									<description>No framing error in the current character.</description>
-									<value>0b0</value>
-								</enumeratedValue>
-							</enumeratedValues>
 						</field>
 						<field>
 							<name>PEParityErrorReadClear</name>
 							<description>PE: Parity error (Read clear)</description>
 							<bitRange>[2:2]</bitRange>
 							<access>read-only</access>
-							<enumeratedValues>
-								<enumeratedValue>
-									<name>There_Is_A_Parity_Error_In_The_Receiver_If_The_Parity_Enable_Is_Set</name>
-									<description>There is a parity error in the receiver if the Parity Enable is set.</description>
-									<value>0b1</value>
-								</enumeratedValue>
-								<enumeratedValue>
-									<name>No_Parity_Error_In_The_Current_Character</name>
-									<description>No parity error in the current character.</description>
-									<value>0b0</value>
-								</enumeratedValue>
-							</enumeratedValues>
 						</field>
 						<field>
 							<name>OEOverrunErrorReadClear</name>
 							<description>OE: Overrun error (Read clear)</description>
 							<bitRange>[1:1]</bitRange>
 							<access>read-only</access>
-							<enumeratedValues>
-								<enumeratedValue>
-									<name>An_Overrun_Error_Has_Occurred_Because_A_New_Data_Character_Was_Received_Before</name>
-									<description>An overrun error has occurred because a new data character was received before</description>
-									<value>0b1</value>
-								</enumeratedValue>
-								<enumeratedValue>
-									<name>No_Overrun_State</name>
-									<description>No overrun state.</description>
-									<value>0b0</value>
-								</enumeratedValue>
-							</enumeratedValues>
 						</field>
 						<field>
 							<name>DRDataReady</name>
 							<description>DR: Data ready</description>
 							<bitRange>[0:0]</bitRange>
 							<access>read-only</access>
-							<enumeratedValues>
-								<enumeratedValue>
-									<name>The_Receiver_Contains_At_Least_One_Character_In_The_UARTRBR_Or_The_Receiver_FIFO</name>
-									<description>The receiver contains at least one character in the UART\_RBR or the receiver FIFO.</description>
-									<value>0b1</value>
-								</enumeratedValue>
-								<enumeratedValue>
-									<name>The_UARTRBR_Is_Read_Or_The_Receiver_FIFO_Is_Empty</name>
-									<description>The UART\_RBR is read or the receiver FIFO is empty.</description>
-									<value>0b0</value>
-								</enumeratedValue>
-							</enumeratedValues>
 						</field>
 					</fields>
 				</register>
@@ -127599,13 +127288,6 @@ permissions and limitations under the License.
 							<description>Delta Data Carrier Detect (DDCD) indicator (Read clear)</description>
 							<bitRange>[3:3]</bitRange>
 							<access>read-only</access>
-							<enumeratedValues>
-								<enumeratedValue>
-									<name>The_NDCD_Line_Has_Changed_Its_State_Since_The_Last_Time_The_CPU_Read_The_MSR</name>
-									<description>The nDCD line has changed its state since the last time the CPU read the MSR.</description>
-									<value>0b1</value>
-								</enumeratedValue>
-							</enumeratedValues>
 						</field>
 						<field>
 							<name>TrailingEdgeOfRingIndicatorTERIDetectorReadClear</name>
@@ -127618,26 +127300,12 @@ permissions and limitations under the License.
 							<description>Delta Data Set Ready (DDSR) indicator (Read clear)</description>
 							<bitRange>[1:1]</bitRange>
 							<access>read-only</access>
-							<enumeratedValues>
-								<enumeratedValue>
-									<name>The_NDSR_Line_Has_Changed_Its_State_Since_The_Last_Time_The_CPU_Read_The_MSR</name>
-									<description>The nDSR line has changed its state since the last time the CPU read the MSR.</description>
-									<value>0b1</value>
-								</enumeratedValue>
-							</enumeratedValues>
 						</field>
 						<field>
 							<name>DeltaClearToSendDCTSIndicatorReadClear</name>
 							<description>Delta Clear To Send (DCTS) indicator (Read clear)</description>
 							<bitRange>[0:0]</bitRange>
 							<access>read-only</access>
-							<enumeratedValues>
-								<enumeratedValue>
-									<name>The_NCTS_Line_Has_Changed_Its_State_Since_The_Last_Time_The_CPU_Read_The_MSR</name>
-									<description>The nCTS line has changed its state since the last time the CPU read the MSR.</description>
-									<value>0b1</value>
-								</enumeratedValue>
-							</enumeratedValues>
 						</field>
 					</fields>
 				</register>
