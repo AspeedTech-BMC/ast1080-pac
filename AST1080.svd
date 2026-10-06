@@ -126888,20 +126888,20 @@ permissions and limitations under the License.
 
 					<fields>
 						<field>
-							<name>Reserved0</name>
+							<name>Reserved</name>
 							<description>Reserved (0)</description>
 							<bitRange>[31:8]</bitRange>
 							<access>read-only</access>
 						</field>
 						<field>
-							<name>UARTRBRReceivingBufferReg</name>
-							<description>UART_RBR: Receiving Buffer Register</description>
+							<name>UARTRBR</name>
+							<description>Receiving Buffer Register</description>
 							<bitRange>[7:0]</bitRange>
 							<access>read-only</access>
 						</field>
 						<field>
-							<name>UARTTHRTxHoldingReg</name>
-							<description>UART_THR: Transmit Holding Register</description>
+							<name>UARTTHR</name>
+							<description>Transmit Holding Register</description>
 							<bitRange>[7:0]</bitRange>
 							<access>read-write</access>
 						</field>
@@ -126918,20 +126918,20 @@ permissions and limitations under the License.
 
 					<fields>
 						<field>
-							<name>Reserved01</name>
+							<name>Reserved1</name>
 							<description>Reserved (0)</description>
 							<bitRange>[31:8]</bitRange>
 							<access>read-only</access>
 						</field>
 						<field>
-							<name>UARTRBRReceivingBufferReg1</name>
-							<description>UART_RBR: Receiving Buffer Register</description>
+							<name>UARTRBR1</name>
+							<description>Receiving Buffer Register</description>
 							<bitRange>[7:0]</bitRange>
 							<access>read-only</access>
 						</field>
 						<field>
-							<name>UARTTHRTxHoldingReg1</name>
-							<description>UART_THR: Transmit Holding Register</description>
+							<name>UARTTHR1</name>
+							<description>Transmit Holding Register</description>
 							<bitRange>[7:0]</bitRange>
 							<access>read-write</access>
 						</field>
@@ -126948,38 +126948,38 @@ permissions and limitations under the License.
 
 					<fields>
 						<field>
-							<name>Reserved0</name>
+							<name>Reserved</name>
 							<description>Reserved (0)</description>
 							<bitRange>[31:8]</bitRange>
 							<access>read-only</access>
 						</field>
 						<field>
-							<name>Reserved01</name>
+							<name>Reserved1</name>
 							<description>Reserved (0)</description>
 							<bitRange>[7:4]</bitRange>
 							<access>read-only</access>
 						</field>
 						<field>
-							<name>EDSSIEnblModemStatusINT</name>
-							<description>EDSSI: Enable Modem Status Interrupt</description>
+							<name>EDSSI</name>
+							<description>Enable Modem Status Interrupt</description>
 							<bitRange>[3:3]</bitRange>
 							<access>read-write</access>
 						</field>
 						<field>
-							<name>ELSIEnblRxrLineStatusINT</name>
-							<description>ELSI: Enable Receiver Line Status Interrupt</description>
+							<name>ELSI</name>
+							<description>Enable Receiver Line Status Interrupt</description>
 							<bitRange>[2:2]</bitRange>
 							<access>read-write</access>
 						</field>
 						<field>
-							<name>ETBEIEnblTxterHoldingRegEmptyINT</name>
-							<description>ETBEI: Enable Transmitter Holding Register Empty Interrupt</description>
+							<name>ETBEI</name>
+							<description>Enable Transmitter Holding Register Empty Interrupt</description>
 							<bitRange>[1:1]</bitRange>
 							<access>read-write</access>
 						</field>
 						<field>
-							<name>ERBFIEnblRxdDataAvailableINT</name>
-							<description>ERBFI: Enable Received Data Available Interrupt</description>
+							<name>ERBFI</name>
+							<description>Enable Received Data Available Interrupt</description>
 							<bitRange>[0:0]</bitRange>
 							<access>read-write</access>
 						</field>
@@ -126996,7 +126996,7 @@ permissions and limitations under the License.
 
 					<fields>
 						<field>
-							<name>Reserved0</name>
+							<name>Reserved</name>
 							<description>Reserved (0)</description>
 							<bitRange>[31:8]</bitRange>
 							<access>read-only</access>
@@ -127008,7 +127008,7 @@ permissions and limitations under the License.
 							<access>read-only</access>
 						</field>
 						<field>
-							<name>Reserved01</name>
+							<name>Reserved1</name>
 							<description>Reserved (0)</description>
 							<bitRange>[5:4]</bitRange>
 							<access>read-only</access>
@@ -127038,7 +127038,7 @@ permissions and limitations under the License.
 
 					<fields>
 						<field>
-							<name>Reserved0</name>
+							<name>Reserved</name>
 							<description>Reserved (0)</description>
 							<bitRange>[31:8]</bitRange>
 							<access>read-only</access>
@@ -127050,7 +127050,7 @@ permissions and limitations under the License.
 							<access>read-write</access>
 						</field>
 						<field>
-							<name>Reserved01</name>
+							<name>Reserved1</name>
 							<description>Reserved (0)</description>
 							<bitRange>[5:3]</bitRange>
 							<access>read-only</access>
@@ -127086,14 +127086,14 @@ permissions and limitations under the License.
 
 					<fields>
 						<field>
-							<name>Reserved0</name>
+							<name>Reserved</name>
 							<description>Reserved (0)</description>
 							<bitRange>[31:8]</bitRange>
 							<access>read-only</access>
 						</field>
 						<field>
-							<name>DLABDivisorLatchAccessBit</name>
-							<description>DLAB: Divisor latch access bit</description>
+							<name>DLAB</name>
+							<description>Divisor latch access bit</description>
 							<bitRange>[7:7]</bitRange>
 							<access>read-write</access>
 						</field>
@@ -127104,26 +127104,26 @@ permissions and limitations under the License.
 							<access>read-write</access>
 						</field>
 						<field>
-							<name>EPSParityModeSel</name>
-							<description>EPS: Parity mode selection</description>
+							<name>EPS</name>
+							<description>Parity mode selection</description>
 							<bitRange>[4:4]</bitRange>
 							<access>read-write</access>
 						</field>
 						<field>
-							<name>PENEnblParityBit</name>
-							<description>PEN: Enable parity bit</description>
+							<name>PEN</name>
+							<description>Enable parity bit</description>
 							<bitRange>[3:3]</bitRange>
 							<access>read-write</access>
 						</field>
 						<field>
-							<name>STOPNumberOfStopBitsTxted</name>
-							<description>STOP: Number of stop bits transmitted</description>
+							<name>STOP</name>
+							<description>Number of stop bits transmitted</description>
 							<bitRange>[2:2]</bitRange>
 							<access>read-write</access>
 						</field>
 						<field>
-							<name>CLSSelectNumberOfBitsPerCharacter</name>
-							<description>CLS: Select number of bits per character</description>
+							<name>CLS</name>
+							<description>Select number of bits per character</description>
 							<bitRange>[1:0]</bitRange>
 							<access>read-write</access>
 						</field>
@@ -127140,7 +127140,7 @@ permissions and limitations under the License.
 
 					<fields>
 						<field>
-							<name>Reserved0</name>
+							<name>Reserved</name>
 							<description>Reserved (0)</description>
 							<bitRange>[31:5]</bitRange>
 							<access>read-only</access>
@@ -127188,7 +127188,7 @@ permissions and limitations under the License.
 
 					<fields>
 						<field>
-							<name>Reserved0</name>
+							<name>Reserved</name>
 							<description>Reserved (0)</description>
 							<bitRange>[31:8]</bitRange>
 							<access>read-only</access>
@@ -127206,38 +127206,38 @@ permissions and limitations under the License.
 							<access>read-only</access>
 						</field>
 						<field>
-							<name>THRETxterHoldingRegEmpty</name>
-							<description>THRE: Transmitter holding register empty</description>
+							<name>THRE</name>
+							<description>Transmitter holding register empty</description>
 							<bitRange>[5:5]</bitRange>
 							<access>read-only</access>
 						</field>
 						<field>
-							<name>BIBreakINTReadClear</name>
-							<description>BI: Break interrupt (Read clear)</description>
+							<name>BI</name>
+							<description>Break interrupt (Read clear)</description>
 							<bitRange>[4:4]</bitRange>
 							<access>read-only</access>
 						</field>
 						<field>
-							<name>FEFramingErrorReadClear</name>
-							<description>FE: Framing error (Read clear)</description>
+							<name>FE</name>
+							<description>Framing error (Read clear)</description>
 							<bitRange>[3:3]</bitRange>
 							<access>read-only</access>
 						</field>
 						<field>
-							<name>PEParityErrorReadClear</name>
-							<description>PE: Parity error (Read clear)</description>
+							<name>PE</name>
+							<description>Parity error (Read clear)</description>
 							<bitRange>[2:2]</bitRange>
 							<access>read-only</access>
 						</field>
 						<field>
-							<name>OEOverrunErrorReadClear</name>
-							<description>OE: Overrun error (Read clear)</description>
+							<name>OE</name>
+							<description>Overrun error (Read clear)</description>
 							<bitRange>[1:1]</bitRange>
 							<access>read-only</access>
 						</field>
 						<field>
-							<name>DRDataReady</name>
-							<description>DR: Data ready</description>
+							<name>DR</name>
+							<description>Data ready</description>
 							<bitRange>[0:0]</bitRange>
 							<access>read-only</access>
 						</field>
@@ -127254,7 +127254,7 @@ permissions and limitations under the License.
 
 					<fields>
 						<field>
-							<name>Reserved0</name>
+							<name>Reserved</name>
 							<description>Reserved (0)</description>
 							<bitRange>[31:8]</bitRange>
 							<access>read-only</access>
@@ -127320,7 +127320,7 @@ permissions and limitations under the License.
 
 					<fields>
 						<field>
-							<name>Reserved0</name>
+							<name>Reserved</name>
 							<description>Reserved (0)</description>
 							<bitRange>[31:8]</bitRange>
 							<access>read-only</access>

@@ -18,8 +18,6 @@ pub type ComplementOfTheNdsrinputOrEqualsToNdtrmcr0inLoopbackModeR = crate::BitR
 pub type ComplementOfTheNriinputOrEqualsToOut1mcr2inLoopbackModeR = crate::BitReader;
 #[doc = "Field `ComplementOfTheNDCDInputOrEqualsToOut2MCR3InLoopbackMode` reader - Complement of the nDCD input or equals to Out2(MCR\\[3\\]) in loopback mode."]
 pub type ComplementOfTheNdcdinputOrEqualsToOut2mcr3inLoopbackModeR = crate::BitReader;
-#[doc = "Field `Reserved0` reader - Reserved (0)"]
-pub type Reserved0R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bit 0 - Delta Clear To Send (DCTS) indicator (Read clear)"]
     #[inline(always)]
@@ -76,11 +74,6 @@ impl R {
         &self,
     ) -> ComplementOfTheNdcdinputOrEqualsToOut2mcr3inLoopbackModeR {
         ComplementOfTheNdcdinputOrEqualsToOut2mcr3inLoopbackModeR::new(((self.bits >> 7) & 1) != 0)
-    }
-    #[doc = "Bits 8:31 - Reserved (0)"]
-    #[inline(always)]
-    pub fn reserved0(&self) -> Reserved0R {
-        Reserved0R::new((self.bits >> 8) & 0x00ff_ffff)
     }
 }
 impl W {}

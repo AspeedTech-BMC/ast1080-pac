@@ -14,14 +14,12 @@ pub type RxFiforstW<'a, REG> = crate::BitWriter<'a, REG>;
 pub type TxFiforstR = crate::BitReader;
 #[doc = "Field `TxFIFORst` writer - Transmit FIFO Reset"]
 pub type TxFiforstW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `Reserved01` reader - Reserved (0)"]
-pub type Reserved01R = crate::FieldReader;
+#[doc = "Field `Reserved1` reader - Reserved (0)"]
+pub type Reserved1R = crate::FieldReader;
 #[doc = "Field `DefineTheRxrFIFOINTTriggerLevel` reader - Define the Receiver FIFO Interrupt trigger level."]
 pub type DefineTheRxrFifointtriggerLevelR = crate::FieldReader;
 #[doc = "Field `DefineTheRxrFIFOINTTriggerLevel` writer - Define the Receiver FIFO Interrupt trigger level."]
 pub type DefineTheRxrFifointtriggerLevelW<'a, REG> = crate::FieldWriter<'a, REG, 2>;
-#[doc = "Field `Reserved0` reader - Reserved (0)"]
-pub type Reserved0R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bit 0 - Enable UART FIFO"]
     #[inline(always)]
@@ -40,18 +38,13 @@ impl R {
     }
     #[doc = "Bits 3:5 - Reserved (0)"]
     #[inline(always)]
-    pub fn reserved01(&self) -> Reserved01R {
-        Reserved01R::new(((self.bits >> 3) & 7) as u8)
+    pub fn reserved1(&self) -> Reserved1R {
+        Reserved1R::new(((self.bits >> 3) & 7) as u8)
     }
     #[doc = "Bits 6:7 - Define the Receiver FIFO Interrupt trigger level."]
     #[inline(always)]
     pub fn define_the_rxr_fifointtrigger_level(&self) -> DefineTheRxrFifointtriggerLevelR {
         DefineTheRxrFifointtriggerLevelR::new(((self.bits >> 6) & 3) as u8)
-    }
-    #[doc = "Bits 8:31 - Reserved (0)"]
-    #[inline(always)]
-    pub fn reserved0(&self) -> Reserved0R {
-        Reserved0R::new((self.bits >> 8) & 0x00ff_ffff)
     }
 }
 impl W {

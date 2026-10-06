@@ -2,82 +2,71 @@
 pub type R = crate::R<UartierSpec>;
 #[doc = "Register `UARTIER` writer"]
 pub type W = crate::W<UartierSpec>;
-#[doc = "Field `ERBFIEnblRxdDataAvailableINT` reader - ERBFI: Enable Received Data Available Interrupt"]
-pub type ErbfienblRxdDataAvailableIntR = crate::BitReader;
-#[doc = "Field `ERBFIEnblRxdDataAvailableINT` writer - ERBFI: Enable Received Data Available Interrupt"]
-pub type ErbfienblRxdDataAvailableIntW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `ETBEIEnblTxterHoldingRegEmptyINT` reader - ETBEI: Enable Transmitter Holding Register Empty Interrupt"]
-pub type EtbeienblTxterHoldingRegEmptyIntR = crate::BitReader;
-#[doc = "Field `ETBEIEnblTxterHoldingRegEmptyINT` writer - ETBEI: Enable Transmitter Holding Register Empty Interrupt"]
-pub type EtbeienblTxterHoldingRegEmptyIntW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `ELSIEnblRxrLineStatusINT` reader - ELSI: Enable Receiver Line Status Interrupt"]
-pub type ElsienblRxrLineStatusIntR = crate::BitReader;
-#[doc = "Field `ELSIEnblRxrLineStatusINT` writer - ELSI: Enable Receiver Line Status Interrupt"]
-pub type ElsienblRxrLineStatusIntW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `EDSSIEnblModemStatusINT` reader - EDSSI: Enable Modem Status Interrupt"]
-pub type EdssienblModemStatusIntR = crate::BitReader;
-#[doc = "Field `EDSSIEnblModemStatusINT` writer - EDSSI: Enable Modem Status Interrupt"]
-pub type EdssienblModemStatusIntW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `Reserved01` reader - Reserved (0)"]
-pub type Reserved01R = crate::FieldReader;
-#[doc = "Field `Reserved0` reader - Reserved (0)"]
-pub type Reserved0R = crate::FieldReader<u32>;
+#[doc = "Field `ERBFI` reader - Enable Received Data Available Interrupt"]
+pub type ErbfiR = crate::BitReader;
+#[doc = "Field `ERBFI` writer - Enable Received Data Available Interrupt"]
+pub type ErbfiW<'a, REG> = crate::BitWriter<'a, REG>;
+#[doc = "Field `ETBEI` reader - Enable Transmitter Holding Register Empty Interrupt"]
+pub type EtbeiR = crate::BitReader;
+#[doc = "Field `ETBEI` writer - Enable Transmitter Holding Register Empty Interrupt"]
+pub type EtbeiW<'a, REG> = crate::BitWriter<'a, REG>;
+#[doc = "Field `ELSI` reader - Enable Receiver Line Status Interrupt"]
+pub type ElsiR = crate::BitReader;
+#[doc = "Field `ELSI` writer - Enable Receiver Line Status Interrupt"]
+pub type ElsiW<'a, REG> = crate::BitWriter<'a, REG>;
+#[doc = "Field `EDSSI` reader - Enable Modem Status Interrupt"]
+pub type EdssiR = crate::BitReader;
+#[doc = "Field `EDSSI` writer - Enable Modem Status Interrupt"]
+pub type EdssiW<'a, REG> = crate::BitWriter<'a, REG>;
+#[doc = "Field `Reserved1` reader - Reserved (0)"]
+pub type Reserved1R = crate::FieldReader;
 impl R {
-    #[doc = "Bit 0 - ERBFI: Enable Received Data Available Interrupt"]
+    #[doc = "Bit 0 - Enable Received Data Available Interrupt"]
     #[inline(always)]
-    pub fn erbfienbl_rxd_data_available_int(&self) -> ErbfienblRxdDataAvailableIntR {
-        ErbfienblRxdDataAvailableIntR::new((self.bits & 1) != 0)
+    pub fn erbfi(&self) -> ErbfiR {
+        ErbfiR::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 1 - ETBEI: Enable Transmitter Holding Register Empty Interrupt"]
+    #[doc = "Bit 1 - Enable Transmitter Holding Register Empty Interrupt"]
     #[inline(always)]
-    pub fn etbeienbl_txter_holding_reg_empty_int(&self) -> EtbeienblTxterHoldingRegEmptyIntR {
-        EtbeienblTxterHoldingRegEmptyIntR::new(((self.bits >> 1) & 1) != 0)
+    pub fn etbei(&self) -> EtbeiR {
+        EtbeiR::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 2 - ELSI: Enable Receiver Line Status Interrupt"]
+    #[doc = "Bit 2 - Enable Receiver Line Status Interrupt"]
     #[inline(always)]
-    pub fn elsienbl_rxr_line_status_int(&self) -> ElsienblRxrLineStatusIntR {
-        ElsienblRxrLineStatusIntR::new(((self.bits >> 2) & 1) != 0)
+    pub fn elsi(&self) -> ElsiR {
+        ElsiR::new(((self.bits >> 2) & 1) != 0)
     }
-    #[doc = "Bit 3 - EDSSI: Enable Modem Status Interrupt"]
+    #[doc = "Bit 3 - Enable Modem Status Interrupt"]
     #[inline(always)]
-    pub fn edssienbl_modem_status_int(&self) -> EdssienblModemStatusIntR {
-        EdssienblModemStatusIntR::new(((self.bits >> 3) & 1) != 0)
+    pub fn edssi(&self) -> EdssiR {
+        EdssiR::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bits 4:7 - Reserved (0)"]
     #[inline(always)]
-    pub fn reserved01(&self) -> Reserved01R {
-        Reserved01R::new(((self.bits >> 4) & 0x0f) as u8)
-    }
-    #[doc = "Bits 8:31 - Reserved (0)"]
-    #[inline(always)]
-    pub fn reserved0(&self) -> Reserved0R {
-        Reserved0R::new((self.bits >> 8) & 0x00ff_ffff)
+    pub fn reserved1(&self) -> Reserved1R {
+        Reserved1R::new(((self.bits >> 4) & 0x0f) as u8)
     }
 }
 impl W {
-    #[doc = "Bit 0 - ERBFI: Enable Received Data Available Interrupt"]
+    #[doc = "Bit 0 - Enable Received Data Available Interrupt"]
     #[inline(always)]
-    pub fn erbfienbl_rxd_data_available_int(
-        &mut self,
-    ) -> ErbfienblRxdDataAvailableIntW<UartierSpec> {
-        ErbfienblRxdDataAvailableIntW::new(self, 0)
+    pub fn erbfi(&mut self) -> ErbfiW<UartierSpec> {
+        ErbfiW::new(self, 0)
     }
-    #[doc = "Bit 1 - ETBEI: Enable Transmitter Holding Register Empty Interrupt"]
+    #[doc = "Bit 1 - Enable Transmitter Holding Register Empty Interrupt"]
     #[inline(always)]
-    pub fn etbeienbl_txter_holding_reg_empty_int(
-        &mut self,
-    ) -> EtbeienblTxterHoldingRegEmptyIntW<UartierSpec> {
-        EtbeienblTxterHoldingRegEmptyIntW::new(self, 1)
+    pub fn etbei(&mut self) -> EtbeiW<UartierSpec> {
+        EtbeiW::new(self, 1)
     }
-    #[doc = "Bit 2 - ELSI: Enable Receiver Line Status Interrupt"]
+    #[doc = "Bit 2 - Enable Receiver Line Status Interrupt"]
     #[inline(always)]
-    pub fn elsienbl_rxr_line_status_int(&mut self) -> ElsienblRxrLineStatusIntW<UartierSpec> {
-        ElsienblRxrLineStatusIntW::new(self, 2)
+    pub fn elsi(&mut self) -> ElsiW<UartierSpec> {
+        ElsiW::new(self, 2)
     }
-    #[doc = "Bit 3 - EDSSI: Enable Modem Status Interrupt"]
+    #[doc = "Bit 3 - Enable Modem Status Interrupt"]
     #[inline(always)]
-    pub fn edssienbl_modem_status_int(&mut self) -> EdssienblModemStatusIntW<UartierSpec> {
-        EdssienblModemStatusIntW::new(self, 3)
+    pub fn edssi(&mut self) -> EdssiW<UartierSpec> {
+        EdssiW::new(self, 3)
     }
 }
 #[doc = "Interrupt Enable Register (DLAB = 0)\n\nYou can [`read`](crate::Reg::read) this register and get [`uartier::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`uartier::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]

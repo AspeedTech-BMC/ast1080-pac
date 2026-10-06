@@ -22,8 +22,6 @@ pub type Out2W<'a, REG> = crate::BitWriter<'a, REG>;
 pub type LoopbackModeR = crate::BitReader;
 #[doc = "Field `LoopbackMode` writer - Loopback mode."]
 pub type LoopbackModeW<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `Reserved0` reader - Reserved (0)"]
-pub type Reserved0R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bit 0 - Data Terminal Ready (nDTR) signal control."]
     #[inline(always)]
@@ -49,11 +47,6 @@ impl R {
     #[inline(always)]
     pub fn loopback_mode(&self) -> LoopbackModeR {
         LoopbackModeR::new(((self.bits >> 4) & 1) != 0)
-    }
-    #[doc = "Bits 5:31 - Reserved (0)"]
-    #[inline(always)]
-    pub fn reserved0(&self) -> Reserved0R {
-        Reserved0R::new((self.bits >> 5) & 0x07ff_ffff)
     }
 }
 impl W {

@@ -6,12 +6,10 @@ pub type W = crate::W<UartiirSpec>;
 pub type IndicatesThatAnIntisPendingWhenItsLogic0R = crate::BitReader;
 #[doc = "Field `INTDecodingTable` reader - Interrupt Decoding Table"]
 pub type IntdecodingTableR = crate::FieldReader;
-#[doc = "Field `Reserved01` reader - Reserved (0)"]
-pub type Reserved01R = crate::FieldReader;
+#[doc = "Field `Reserved1` reader - Reserved (0)"]
+pub type Reserved1R = crate::FieldReader;
 #[doc = "Field `FIFOEnbldBits` reader - FIFO-Enabled Bits"]
 pub type FifoenbldBitsR = crate::FieldReader;
-#[doc = "Field `Reserved0` reader - Reserved (0)"]
-pub type Reserved0R = crate::FieldReader<u32>;
 impl R {
     #[doc = "Bit 0 - Indicates that an interrupt is pending when it's logic \"0\"."]
     #[inline(always)]
@@ -27,18 +25,13 @@ impl R {
     }
     #[doc = "Bits 4:5 - Reserved (0)"]
     #[inline(always)]
-    pub fn reserved01(&self) -> Reserved01R {
-        Reserved01R::new(((self.bits >> 4) & 3) as u8)
+    pub fn reserved1(&self) -> Reserved1R {
+        Reserved1R::new(((self.bits >> 4) & 3) as u8)
     }
     #[doc = "Bits 6:7 - FIFO-Enabled Bits"]
     #[inline(always)]
     pub fn fifoenbld_bits(&self) -> FifoenbldBitsR {
         FifoenbldBitsR::new(((self.bits >> 6) & 3) as u8)
-    }
-    #[doc = "Bits 8:31 - Reserved (0)"]
-    #[inline(always)]
-    pub fn reserved0(&self) -> Reserved0R {
-        Reserved0R::new((self.bits >> 8) & 0x00ff_ffff)
     }
 }
 impl W {}

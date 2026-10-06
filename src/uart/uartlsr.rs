@@ -2,54 +2,52 @@
 pub type R = crate::R<UartlsrSpec>;
 #[doc = "Register `UARTLSR` writer"]
 pub type W = crate::W<UartlsrSpec>;
-#[doc = "Field `DRDataReady` reader - DR: Data ready"]
-pub type DrdataReadyR = crate::BitReader;
-#[doc = "Field `OEOverrunErrorReadClear` reader - OE: Overrun error (Read clear)"]
-pub type OeoverrunErrorReadClearR = crate::BitReader;
-#[doc = "Field `PEParityErrorReadClear` reader - PE: Parity error (Read clear)"]
-pub type PeparityErrorReadClearR = crate::BitReader;
-#[doc = "Field `FEFramingErrorReadClear` reader - FE: Framing error (Read clear)"]
-pub type FeframingErrorReadClearR = crate::BitReader;
-#[doc = "Field `BIBreakINTReadClear` reader - BI: Break interrupt (Read clear)"]
-pub type BibreakIntreadClearR = crate::BitReader;
-#[doc = "Field `THRETxterHoldingRegEmpty` reader - THRE: Transmitter holding register empty"]
-pub type ThretxterHoldingRegEmptyR = crate::BitReader;
+#[doc = "Field `DR` reader - Data ready"]
+pub type DrR = crate::BitReader;
+#[doc = "Field `OE` reader - Overrun error (Read clear)"]
+pub type OeR = crate::BitReader;
+#[doc = "Field `PE` reader - Parity error (Read clear)"]
+pub type PeR = crate::BitReader;
+#[doc = "Field `FE` reader - Framing error (Read clear)"]
+pub type FeR = crate::BitReader;
+#[doc = "Field `BI` reader - Break interrupt (Read clear)"]
+pub type BiR = crate::BitReader;
+#[doc = "Field `THRE` reader - Transmitter holding register empty"]
+pub type ThreR = crate::BitReader;
 #[doc = "Field `TxterEmpty` reader - Transmitter empty"]
 pub type TxterEmptyR = crate::BitReader;
 #[doc = "Field `ErrInRxrFIFOReadClear` reader - Error in Receiver FIFO (Read clear)"]
 pub type ErrInRxrFiforeadClearR = crate::BitReader;
-#[doc = "Field `Reserved0` reader - Reserved (0)"]
-pub type Reserved0R = crate::FieldReader<u32>;
 impl R {
-    #[doc = "Bit 0 - DR: Data ready"]
+    #[doc = "Bit 0 - Data ready"]
     #[inline(always)]
-    pub fn drdata_ready(&self) -> DrdataReadyR {
-        DrdataReadyR::new((self.bits & 1) != 0)
+    pub fn dr(&self) -> DrR {
+        DrR::new((self.bits & 1) != 0)
     }
-    #[doc = "Bit 1 - OE: Overrun error (Read clear)"]
+    #[doc = "Bit 1 - Overrun error (Read clear)"]
     #[inline(always)]
-    pub fn oeoverrun_error_read_clear(&self) -> OeoverrunErrorReadClearR {
-        OeoverrunErrorReadClearR::new(((self.bits >> 1) & 1) != 0)
+    pub fn oe(&self) -> OeR {
+        OeR::new(((self.bits >> 1) & 1) != 0)
     }
-    #[doc = "Bit 2 - PE: Parity error (Read clear)"]
+    #[doc = "Bit 2 - Parity error (Read clear)"]
     #[inline(always)]
-    pub fn peparity_error_read_clear(&self) -> PeparityErrorReadClearR {
-        PeparityErrorReadClearR::new(((self.bits >> 2) & 1) != 0)
+    pub fn pe(&self) -> PeR {
+        PeR::new(((self.bits >> 2) & 1) != 0)
     }
-    #[doc = "Bit 3 - FE: Framing error (Read clear)"]
+    #[doc = "Bit 3 - Framing error (Read clear)"]
     #[inline(always)]
-    pub fn feframing_error_read_clear(&self) -> FeframingErrorReadClearR {
-        FeframingErrorReadClearR::new(((self.bits >> 3) & 1) != 0)
+    pub fn fe(&self) -> FeR {
+        FeR::new(((self.bits >> 3) & 1) != 0)
     }
-    #[doc = "Bit 4 - BI: Break interrupt (Read clear)"]
+    #[doc = "Bit 4 - Break interrupt (Read clear)"]
     #[inline(always)]
-    pub fn bibreak_intread_clear(&self) -> BibreakIntreadClearR {
-        BibreakIntreadClearR::new(((self.bits >> 4) & 1) != 0)
+    pub fn bi(&self) -> BiR {
+        BiR::new(((self.bits >> 4) & 1) != 0)
     }
-    #[doc = "Bit 5 - THRE: Transmitter holding register empty"]
+    #[doc = "Bit 5 - Transmitter holding register empty"]
     #[inline(always)]
-    pub fn thretxter_holding_reg_empty(&self) -> ThretxterHoldingRegEmptyR {
-        ThretxterHoldingRegEmptyR::new(((self.bits >> 5) & 1) != 0)
+    pub fn thre(&self) -> ThreR {
+        ThreR::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Transmitter empty"]
     #[inline(always)]
@@ -60,11 +58,6 @@ impl R {
     #[inline(always)]
     pub fn err_in_rxr_fiforead_clear(&self) -> ErrInRxrFiforeadClearR {
         ErrInRxrFiforeadClearR::new(((self.bits >> 7) & 1) != 0)
-    }
-    #[doc = "Bits 8:31 - Reserved (0)"]
-    #[inline(always)]
-    pub fn reserved0(&self) -> Reserved0R {
-        Reserved0R::new((self.bits >> 8) & 0x00ff_ffff)
     }
 }
 impl W {}
