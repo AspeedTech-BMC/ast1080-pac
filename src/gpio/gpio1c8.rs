@@ -4,361 +4,361 @@ pub type R = crate::R<Gpio1c8Spec>;
 pub type W = crate::W<Gpio1c8Spec>;
 #[doc = "Data register\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum DataReg2 {
+pub enum DataReg {
     #[doc = "0: Output 0 if Bit1 is 1."]
     Output0IfBit1Is1 = 0,
     #[doc = "1: Output 1 if Bit1 is 1."]
     Output1IfBit1Is1 = 1,
 }
-impl From<DataReg2> for bool {
+impl From<DataReg> for bool {
     #[inline(always)]
-    fn from(variant: DataReg2) -> Self {
+    fn from(variant: DataReg) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DataReg2` reader - Data register"]
-pub type DataReg2R = crate::BitReader<DataReg2>;
-impl DataReg2R {
+#[doc = "Field `DataReg` reader - Data register"]
+pub type DataRegR = crate::BitReader<DataReg>;
+impl DataRegR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> DataReg2 {
+    pub const fn variant(&self) -> DataReg {
         match self.bits {
-            false => DataReg2::Output0IfBit1Is1,
-            true => DataReg2::Output1IfBit1Is1,
+            false => DataReg::Output0IfBit1Is1,
+            true => DataReg::Output1IfBit1Is1,
         }
     }
     #[doc = "Output 0 if Bit1 is 1."]
     #[inline(always)]
     pub fn is_output_0_if_bit1_is_1(&self) -> bool {
-        *self == DataReg2::Output0IfBit1Is1
+        *self == DataReg::Output0IfBit1Is1
     }
     #[doc = "Output 1 if Bit1 is 1."]
     #[inline(always)]
     pub fn is_output_1_if_bit1_is_1(&self) -> bool {
-        *self == DataReg2::Output1IfBit1Is1
+        *self == DataReg::Output1IfBit1Is1
     }
 }
-#[doc = "Field `DataReg2` writer - Data register"]
-pub type DataReg2W<'a, REG> = crate::BitWriter<'a, REG, DataReg2>;
-impl<'a, REG> DataReg2W<'a, REG>
+#[doc = "Field `DataReg` writer - Data register"]
+pub type DataRegW<'a, REG> = crate::BitWriter<'a, REG, DataReg>;
+impl<'a, REG> DataRegW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Output 0 if Bit1 is 1."]
     #[inline(always)]
     pub fn output_0_if_bit1_is_1(self) -> &'a mut crate::W<REG> {
-        self.variant(DataReg2::Output0IfBit1Is1)
+        self.variant(DataReg::Output0IfBit1Is1)
     }
     #[doc = "Output 1 if Bit1 is 1."]
     #[inline(always)]
     pub fn output_1_if_bit1_is_1(self) -> &'a mut crate::W<REG> {
-        self.variant(DataReg2::Output1IfBit1Is1)
+        self.variant(DataReg::Output1IfBit1Is1)
     }
 }
 #[doc = "Direction register\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum DirectionReg2 {
+pub enum DirectionReg {
     #[doc = "0: Input"]
     Input = 0,
     #[doc = "1: Output"]
     Output = 1,
 }
-impl From<DirectionReg2> for bool {
+impl From<DirectionReg> for bool {
     #[inline(always)]
-    fn from(variant: DirectionReg2) -> Self {
+    fn from(variant: DirectionReg) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `DirectionReg2` reader - Direction register"]
-pub type DirectionReg2R = crate::BitReader<DirectionReg2>;
-impl DirectionReg2R {
+#[doc = "Field `DirectionReg` reader - Direction register"]
+pub type DirectionRegR = crate::BitReader<DirectionReg>;
+impl DirectionRegR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> DirectionReg2 {
+    pub const fn variant(&self) -> DirectionReg {
         match self.bits {
-            false => DirectionReg2::Input,
-            true => DirectionReg2::Output,
+            false => DirectionReg::Input,
+            true => DirectionReg::Output,
         }
     }
     #[doc = "Input"]
     #[inline(always)]
     pub fn is_input(&self) -> bool {
-        *self == DirectionReg2::Input
+        *self == DirectionReg::Input
     }
     #[doc = "Output"]
     #[inline(always)]
     pub fn is_output(&self) -> bool {
-        *self == DirectionReg2::Output
+        *self == DirectionReg::Output
     }
 }
-#[doc = "Field `DirectionReg2` writer - Direction register"]
-pub type DirectionReg2W<'a, REG> = crate::BitWriter<'a, REG, DirectionReg2>;
-impl<'a, REG> DirectionReg2W<'a, REG>
+#[doc = "Field `DirectionReg` writer - Direction register"]
+pub type DirectionRegW<'a, REG> = crate::BitWriter<'a, REG, DirectionReg>;
+impl<'a, REG> DirectionRegW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Input"]
     #[inline(always)]
     pub fn input(self) -> &'a mut crate::W<REG> {
-        self.variant(DirectionReg2::Input)
+        self.variant(DirectionReg::Input)
     }
     #[doc = "Output"]
     #[inline(always)]
     pub fn output(self) -> &'a mut crate::W<REG> {
-        self.variant(DirectionReg2::Output)
+        self.variant(DirectionReg::Output)
     }
 }
 #[doc = "Interrupt enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum Intenbl2 {
+pub enum Intenbl {
     #[doc = "0: Disable interrupt"]
     DisableInterrupt = 0,
     #[doc = "1: Enable interrupt"]
     EnableInterrupt = 1,
 }
-impl From<Intenbl2> for bool {
+impl From<Intenbl> for bool {
     #[inline(always)]
-    fn from(variant: Intenbl2) -> Self {
+    fn from(variant: Intenbl) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `INTEnbl2` reader - Interrupt enable"]
-pub type Intenbl2R = crate::BitReader<Intenbl2>;
-impl Intenbl2R {
+#[doc = "Field `INTEnbl` reader - Interrupt enable"]
+pub type IntenblR = crate::BitReader<Intenbl>;
+impl IntenblR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> Intenbl2 {
+    pub const fn variant(&self) -> Intenbl {
         match self.bits {
-            false => Intenbl2::DisableInterrupt,
-            true => Intenbl2::EnableInterrupt,
+            false => Intenbl::DisableInterrupt,
+            true => Intenbl::EnableInterrupt,
         }
     }
     #[doc = "Disable interrupt"]
     #[inline(always)]
     pub fn is_disable_interrupt(&self) -> bool {
-        *self == Intenbl2::DisableInterrupt
+        *self == Intenbl::DisableInterrupt
     }
     #[doc = "Enable interrupt"]
     #[inline(always)]
     pub fn is_enable_interrupt(&self) -> bool {
-        *self == Intenbl2::EnableInterrupt
+        *self == Intenbl::EnableInterrupt
     }
 }
-#[doc = "Field `INTEnbl2` writer - Interrupt enable"]
-pub type Intenbl2W<'a, REG> = crate::BitWriter<'a, REG, Intenbl2>;
-impl<'a, REG> Intenbl2W<'a, REG>
+#[doc = "Field `INTEnbl` writer - Interrupt enable"]
+pub type IntenblW<'a, REG> = crate::BitWriter<'a, REG, Intenbl>;
+impl<'a, REG> IntenblW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Disable interrupt"]
     #[inline(always)]
     pub fn disable_interrupt(self) -> &'a mut crate::W<REG> {
-        self.variant(Intenbl2::DisableInterrupt)
+        self.variant(Intenbl::DisableInterrupt)
     }
     #[doc = "Enable interrupt"]
     #[inline(always)]
     pub fn enable_interrupt(self) -> &'a mut crate::W<REG> {
-        self.variant(Intenbl2::EnableInterrupt)
+        self.variant(Intenbl::EnableInterrupt)
     }
 }
 #[doc = "Interrupt sensitivity type 0 selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum IntsensitivityType0sel2 {
+pub enum IntsensitivityType0sel {
     #[doc = "0: Select falling-edge or level-low trigger mode"]
     SelectFallingedgeOrLevellowTriggerMode = 0,
     #[doc = "1: Select rising-edge or level-high trigger mode"]
     SelectRisingedgeOrLevelhighTriggerMode = 1,
 }
-impl From<IntsensitivityType0sel2> for bool {
+impl From<IntsensitivityType0sel> for bool {
     #[inline(always)]
-    fn from(variant: IntsensitivityType0sel2) -> Self {
+    fn from(variant: IntsensitivityType0sel) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `INTSensitivityType0Sel2` reader - Interrupt sensitivity type 0 selection"]
-pub type IntsensitivityType0sel2R = crate::BitReader<IntsensitivityType0sel2>;
-impl IntsensitivityType0sel2R {
+#[doc = "Field `INTSensitivityType0Sel` reader - Interrupt sensitivity type 0 selection"]
+pub type IntsensitivityType0selR = crate::BitReader<IntsensitivityType0sel>;
+impl IntsensitivityType0selR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> IntsensitivityType0sel2 {
+    pub const fn variant(&self) -> IntsensitivityType0sel {
         match self.bits {
-            false => IntsensitivityType0sel2::SelectFallingedgeOrLevellowTriggerMode,
-            true => IntsensitivityType0sel2::SelectRisingedgeOrLevelhighTriggerMode,
+            false => IntsensitivityType0sel::SelectFallingedgeOrLevellowTriggerMode,
+            true => IntsensitivityType0sel::SelectRisingedgeOrLevelhighTriggerMode,
         }
     }
     #[doc = "Select falling-edge or level-low trigger mode"]
     #[inline(always)]
     pub fn is_select_fallingedge_or_levellow_trigger_mode(&self) -> bool {
-        *self == IntsensitivityType0sel2::SelectFallingedgeOrLevellowTriggerMode
+        *self == IntsensitivityType0sel::SelectFallingedgeOrLevellowTriggerMode
     }
     #[doc = "Select rising-edge or level-high trigger mode"]
     #[inline(always)]
     pub fn is_select_risingedge_or_levelhigh_trigger_mode(&self) -> bool {
-        *self == IntsensitivityType0sel2::SelectRisingedgeOrLevelhighTriggerMode
+        *self == IntsensitivityType0sel::SelectRisingedgeOrLevelhighTriggerMode
     }
 }
-#[doc = "Field `INTSensitivityType0Sel2` writer - Interrupt sensitivity type 0 selection"]
-pub type IntsensitivityType0sel2W<'a, REG> = crate::BitWriter<'a, REG, IntsensitivityType0sel2>;
-impl<'a, REG> IntsensitivityType0sel2W<'a, REG>
+#[doc = "Field `INTSensitivityType0Sel` writer - Interrupt sensitivity type 0 selection"]
+pub type IntsensitivityType0selW<'a, REG> = crate::BitWriter<'a, REG, IntsensitivityType0sel>;
+impl<'a, REG> IntsensitivityType0selW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Select falling-edge or level-low trigger mode"]
     #[inline(always)]
     pub fn select_fallingedge_or_levellow_trigger_mode(self) -> &'a mut crate::W<REG> {
-        self.variant(IntsensitivityType0sel2::SelectFallingedgeOrLevellowTriggerMode)
+        self.variant(IntsensitivityType0sel::SelectFallingedgeOrLevellowTriggerMode)
     }
     #[doc = "Select rising-edge or level-high trigger mode"]
     #[inline(always)]
     pub fn select_risingedge_or_levelhigh_trigger_mode(self) -> &'a mut crate::W<REG> {
-        self.variant(IntsensitivityType0sel2::SelectRisingedgeOrLevelhighTriggerMode)
+        self.variant(IntsensitivityType0sel::SelectRisingedgeOrLevelhighTriggerMode)
     }
 }
 #[doc = "Interrupt sensitivity type 1 selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum IntsensitivityType1sel2 {
+pub enum IntsensitivityType1sel {
     #[doc = "0: Select edge trigger mode"]
     SelectEdgeTriggerMode = 0,
     #[doc = "1: Select level trigger mode"]
     SelectLevelTriggerMode = 1,
 }
-impl From<IntsensitivityType1sel2> for bool {
+impl From<IntsensitivityType1sel> for bool {
     #[inline(always)]
-    fn from(variant: IntsensitivityType1sel2) -> Self {
+    fn from(variant: IntsensitivityType1sel) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `INTSensitivityType1Sel2` reader - Interrupt sensitivity type 1 selection"]
-pub type IntsensitivityType1sel2R = crate::BitReader<IntsensitivityType1sel2>;
-impl IntsensitivityType1sel2R {
+#[doc = "Field `INTSensitivityType1Sel` reader - Interrupt sensitivity type 1 selection"]
+pub type IntsensitivityType1selR = crate::BitReader<IntsensitivityType1sel>;
+impl IntsensitivityType1selR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> IntsensitivityType1sel2 {
+    pub const fn variant(&self) -> IntsensitivityType1sel {
         match self.bits {
-            false => IntsensitivityType1sel2::SelectEdgeTriggerMode,
-            true => IntsensitivityType1sel2::SelectLevelTriggerMode,
+            false => IntsensitivityType1sel::SelectEdgeTriggerMode,
+            true => IntsensitivityType1sel::SelectLevelTriggerMode,
         }
     }
     #[doc = "Select edge trigger mode"]
     #[inline(always)]
     pub fn is_select_edge_trigger_mode(&self) -> bool {
-        *self == IntsensitivityType1sel2::SelectEdgeTriggerMode
+        *self == IntsensitivityType1sel::SelectEdgeTriggerMode
     }
     #[doc = "Select level trigger mode"]
     #[inline(always)]
     pub fn is_select_level_trigger_mode(&self) -> bool {
-        *self == IntsensitivityType1sel2::SelectLevelTriggerMode
+        *self == IntsensitivityType1sel::SelectLevelTriggerMode
     }
 }
-#[doc = "Field `INTSensitivityType1Sel2` writer - Interrupt sensitivity type 1 selection"]
-pub type IntsensitivityType1sel2W<'a, REG> = crate::BitWriter<'a, REG, IntsensitivityType1sel2>;
-impl<'a, REG> IntsensitivityType1sel2W<'a, REG>
+#[doc = "Field `INTSensitivityType1Sel` writer - Interrupt sensitivity type 1 selection"]
+pub type IntsensitivityType1selW<'a, REG> = crate::BitWriter<'a, REG, IntsensitivityType1sel>;
+impl<'a, REG> IntsensitivityType1selW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Select edge trigger mode"]
     #[inline(always)]
     pub fn select_edge_trigger_mode(self) -> &'a mut crate::W<REG> {
-        self.variant(IntsensitivityType1sel2::SelectEdgeTriggerMode)
+        self.variant(IntsensitivityType1sel::SelectEdgeTriggerMode)
     }
     #[doc = "Select level trigger mode"]
     #[inline(always)]
     pub fn select_level_trigger_mode(self) -> &'a mut crate::W<REG> {
-        self.variant(IntsensitivityType1sel2::SelectLevelTriggerMode)
+        self.variant(IntsensitivityType1sel::SelectLevelTriggerMode)
     }
 }
 #[doc = "Interrupt sensitivity type 2 selection\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum IntsensitivityType2sel2 {
+pub enum IntsensitivityType2sel {
     #[doc = "0: Select edge or level trigger mode"]
     SelectEdgeOrLevelTriggerMode = 0,
     #[doc = "1: Select dual-edge trigger mode"]
     SelectDualedgeTriggerMode = 1,
 }
-impl From<IntsensitivityType2sel2> for bool {
+impl From<IntsensitivityType2sel> for bool {
     #[inline(always)]
-    fn from(variant: IntsensitivityType2sel2) -> Self {
+    fn from(variant: IntsensitivityType2sel) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `INTSensitivityType2Sel2` reader - Interrupt sensitivity type 2 selection"]
-pub type IntsensitivityType2sel2R = crate::BitReader<IntsensitivityType2sel2>;
-impl IntsensitivityType2sel2R {
+#[doc = "Field `INTSensitivityType2Sel` reader - Interrupt sensitivity type 2 selection"]
+pub type IntsensitivityType2selR = crate::BitReader<IntsensitivityType2sel>;
+impl IntsensitivityType2selR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> IntsensitivityType2sel2 {
+    pub const fn variant(&self) -> IntsensitivityType2sel {
         match self.bits {
-            false => IntsensitivityType2sel2::SelectEdgeOrLevelTriggerMode,
-            true => IntsensitivityType2sel2::SelectDualedgeTriggerMode,
+            false => IntsensitivityType2sel::SelectEdgeOrLevelTriggerMode,
+            true => IntsensitivityType2sel::SelectDualedgeTriggerMode,
         }
     }
     #[doc = "Select edge or level trigger mode"]
     #[inline(always)]
     pub fn is_select_edge_or_level_trigger_mode(&self) -> bool {
-        *self == IntsensitivityType2sel2::SelectEdgeOrLevelTriggerMode
+        *self == IntsensitivityType2sel::SelectEdgeOrLevelTriggerMode
     }
     #[doc = "Select dual-edge trigger mode"]
     #[inline(always)]
     pub fn is_select_dualedge_trigger_mode(&self) -> bool {
-        *self == IntsensitivityType2sel2::SelectDualedgeTriggerMode
+        *self == IntsensitivityType2sel::SelectDualedgeTriggerMode
     }
 }
-#[doc = "Field `INTSensitivityType2Sel2` writer - Interrupt sensitivity type 2 selection"]
-pub type IntsensitivityType2sel2W<'a, REG> = crate::BitWriter<'a, REG, IntsensitivityType2sel2>;
-impl<'a, REG> IntsensitivityType2sel2W<'a, REG>
+#[doc = "Field `INTSensitivityType2Sel` writer - Interrupt sensitivity type 2 selection"]
+pub type IntsensitivityType2selW<'a, REG> = crate::BitWriter<'a, REG, IntsensitivityType2sel>;
+impl<'a, REG> IntsensitivityType2selW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Select edge or level trigger mode"]
     #[inline(always)]
     pub fn select_edge_or_level_trigger_mode(self) -> &'a mut crate::W<REG> {
-        self.variant(IntsensitivityType2sel2::SelectEdgeOrLevelTriggerMode)
+        self.variant(IntsensitivityType2sel::SelectEdgeOrLevelTriggerMode)
     }
     #[doc = "Select dual-edge trigger mode"]
     #[inline(always)]
     pub fn select_dualedge_trigger_mode(self) -> &'a mut crate::W<REG> {
-        self.variant(IntsensitivityType2sel2::SelectDualedgeTriggerMode)
+        self.variant(IntsensitivityType2sel::SelectDualedgeTriggerMode)
     }
 }
 #[doc = "Reset tolerance enable\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum RstToleranceEnbl2 {
+pub enum RstToleranceEnbl {
     #[doc = "0: Bit0 and Bit1 will be reset by WDT\\_SOC and/or EXTRSTN reset"]
     Bit0AndBit1WillBeResetByWdtsocAndorExtrstnReset = 0,
     #[doc = "1: Bit0 and Bit1 will not be reset by WDT\\_SOC and/or EXTRSTN"]
     Bit0AndBit1WillNotBeResetByWdtsocAndorExtrstn = 1,
 }
-impl From<RstToleranceEnbl2> for bool {
+impl From<RstToleranceEnbl> for bool {
     #[inline(always)]
-    fn from(variant: RstToleranceEnbl2) -> Self {
+    fn from(variant: RstToleranceEnbl) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `RstToleranceEnbl2` reader - Reset tolerance enable"]
-pub type RstToleranceEnbl2R = crate::BitReader<RstToleranceEnbl2>;
-impl RstToleranceEnbl2R {
+#[doc = "Field `RstToleranceEnbl` reader - Reset tolerance enable"]
+pub type RstToleranceEnblR = crate::BitReader<RstToleranceEnbl>;
+impl RstToleranceEnblR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> RstToleranceEnbl2 {
+    pub const fn variant(&self) -> RstToleranceEnbl {
         match self.bits {
-            false => RstToleranceEnbl2::Bit0AndBit1WillBeResetByWdtsocAndorExtrstnReset,
-            true => RstToleranceEnbl2::Bit0AndBit1WillNotBeResetByWdtsocAndorExtrstn,
+            false => RstToleranceEnbl::Bit0AndBit1WillBeResetByWdtsocAndorExtrstnReset,
+            true => RstToleranceEnbl::Bit0AndBit1WillNotBeResetByWdtsocAndorExtrstn,
         }
     }
     #[doc = "Bit0 and Bit1 will be reset by WDT\\_SOC and/or EXTRSTN reset"]
     #[inline(always)]
     pub fn is_bit0_and_bit1_will_be_reset_by_wdtsoc_andor_extrstn_reset(&self) -> bool {
-        *self == RstToleranceEnbl2::Bit0AndBit1WillBeResetByWdtsocAndorExtrstnReset
+        *self == RstToleranceEnbl::Bit0AndBit1WillBeResetByWdtsocAndorExtrstnReset
     }
     #[doc = "Bit0 and Bit1 will not be reset by WDT\\_SOC and/or EXTRSTN"]
     #[inline(always)]
     pub fn is_bit0_and_bit1_will_not_be_reset_by_wdtsoc_andor_extrstn(&self) -> bool {
-        *self == RstToleranceEnbl2::Bit0AndBit1WillNotBeResetByWdtsocAndorExtrstn
+        *self == RstToleranceEnbl::Bit0AndBit1WillNotBeResetByWdtsocAndorExtrstn
     }
 }
-#[doc = "Field `RstToleranceEnbl2` writer - Reset tolerance enable"]
-pub type RstToleranceEnbl2W<'a, REG> = crate::BitWriter<'a, REG, RstToleranceEnbl2>;
-impl<'a, REG> RstToleranceEnbl2W<'a, REG>
+#[doc = "Field `RstToleranceEnbl` writer - Reset tolerance enable"]
+pub type RstToleranceEnblW<'a, REG> = crate::BitWriter<'a, REG, RstToleranceEnbl>;
+impl<'a, REG> RstToleranceEnblW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
@@ -367,282 +367,275 @@ where
     pub fn bit0_and_bit1_will_be_reset_by_wdtsoc_andor_extrstn_reset(
         self,
     ) -> &'a mut crate::W<REG> {
-        self.variant(RstToleranceEnbl2::Bit0AndBit1WillBeResetByWdtsocAndorExtrstnReset)
+        self.variant(RstToleranceEnbl::Bit0AndBit1WillBeResetByWdtsocAndorExtrstnReset)
     }
     #[doc = "Bit0 and Bit1 will not be reset by WDT\\_SOC and/or EXTRSTN"]
     #[inline(always)]
     pub fn bit0_and_bit1_will_not_be_reset_by_wdtsoc_andor_extrstn(self) -> &'a mut crate::W<REG> {
-        self.variant(RstToleranceEnbl2::Bit0AndBit1WillNotBeResetByWdtsocAndorExtrstn)
+        self.variant(RstToleranceEnbl::Bit0AndBit1WillNotBeResetByWdtsocAndorExtrstn)
     }
 }
-#[doc = "Field `DebounceSettingReg12` reader - Debounce setting register #1"]
-pub type DebounceSettingReg12R = crate::BitReader;
-#[doc = "Field `DebounceSettingReg12` writer - Debounce setting register #1"]
-pub type DebounceSettingReg12W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `DebounceSettingReg22` reader - Debounce setting register #2"]
-pub type DebounceSettingReg22R = crate::BitReader;
-#[doc = "Field `DebounceSettingReg22` writer - Debounce setting register #2"]
-pub type DebounceSettingReg22W<'a, REG> = crate::BitWriter<'a, REG>;
+#[doc = "Field `DebounceSettingReg1` reader - Debounce setting register #1"]
+pub type DebounceSettingReg1R = crate::BitReader;
+#[doc = "Field `DebounceSettingReg1` writer - Debounce setting register #1"]
+pub type DebounceSettingReg1W<'a, REG> = crate::BitWriter<'a, REG>;
+#[doc = "Field `DebounceSettingReg2` reader - Debounce setting register #2"]
+pub type DebounceSettingReg2R = crate::BitReader;
+#[doc = "Field `DebounceSettingReg2` writer - Debounce setting register #2"]
+pub type DebounceSettingReg2W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Input mask\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum InputMask2 {
+pub enum InputMask {
     #[doc = "0: Read from Bit13 will be updated."]
     ReadFromBit13WillBeUpdated = 0,
     #[doc = "1: Read from Bit13 will not be updated."]
     ReadFromBit13WillNotBeUpdated = 1,
 }
-impl From<InputMask2> for bool {
+impl From<InputMask> for bool {
     #[inline(always)]
-    fn from(variant: InputMask2) -> Self {
+    fn from(variant: InputMask) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `InputMask2` reader - Input mask"]
-pub type InputMask2R = crate::BitReader<InputMask2>;
-impl InputMask2R {
+#[doc = "Field `InputMask` reader - Input mask"]
+pub type InputMaskR = crate::BitReader<InputMask>;
+impl InputMaskR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> InputMask2 {
+    pub const fn variant(&self) -> InputMask {
         match self.bits {
-            false => InputMask2::ReadFromBit13WillBeUpdated,
-            true => InputMask2::ReadFromBit13WillNotBeUpdated,
+            false => InputMask::ReadFromBit13WillBeUpdated,
+            true => InputMask::ReadFromBit13WillNotBeUpdated,
         }
     }
     #[doc = "Read from Bit13 will be updated."]
     #[inline(always)]
     pub fn is_read_from_bit13_will_be_updated(&self) -> bool {
-        *self == InputMask2::ReadFromBit13WillBeUpdated
+        *self == InputMask::ReadFromBit13WillBeUpdated
     }
     #[doc = "Read from Bit13 will not be updated."]
     #[inline(always)]
     pub fn is_read_from_bit13_will_not_be_updated(&self) -> bool {
-        *self == InputMask2::ReadFromBit13WillNotBeUpdated
+        *self == InputMask::ReadFromBit13WillNotBeUpdated
     }
 }
-#[doc = "Field `InputMask2` writer - Input mask"]
-pub type InputMask2W<'a, REG> = crate::BitWriter<'a, REG, InputMask2>;
-impl<'a, REG> InputMask2W<'a, REG>
+#[doc = "Field `InputMask` writer - Input mask"]
+pub type InputMaskW<'a, REG> = crate::BitWriter<'a, REG, InputMask>;
+impl<'a, REG> InputMaskW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "Read from Bit13 will be updated."]
     #[inline(always)]
     pub fn read_from_bit13_will_be_updated(self) -> &'a mut crate::W<REG> {
-        self.variant(InputMask2::ReadFromBit13WillBeUpdated)
+        self.variant(InputMask::ReadFromBit13WillBeUpdated)
     }
     #[doc = "Read from Bit13 will not be updated."]
     #[inline(always)]
     pub fn read_from_bit13_will_not_be_updated(self) -> &'a mut crate::W<REG> {
-        self.variant(InputMask2::ReadFromBit13WillNotBeUpdated)
+        self.variant(InputMask::ReadFromBit13WillNotBeUpdated)
     }
 }
-#[doc = "Field `BlinkCounterSel12` reader - Blink Counter Selection #1"]
-pub type BlinkCounterSel12R = crate::BitReader;
-#[doc = "Field `BlinkCounterSel12` writer - Blink Counter Selection #1"]
-pub type BlinkCounterSel12W<'a, REG> = crate::BitWriter<'a, REG>;
-#[doc = "Field `BlinkCounterSel22` reader - Blink Counter Selection #2"]
-pub type BlinkCounterSel22R = crate::BitReader;
-#[doc = "Field `BlinkCounterSel22` writer - Blink Counter Selection #2"]
-pub type BlinkCounterSel22W<'a, REG> = crate::BitWriter<'a, REG>;
+#[doc = "Field `BlinkCounterSel1` reader - Blink Counter Selection #1"]
+pub type BlinkCounterSel1R = crate::BitReader;
+#[doc = "Field `BlinkCounterSel1` writer - Blink Counter Selection #1"]
+pub type BlinkCounterSel1W<'a, REG> = crate::BitWriter<'a, REG>;
+#[doc = "Field `BlinkCounterSel2` reader - Blink Counter Selection #2"]
+pub type BlinkCounterSel2R = crate::BitReader;
+#[doc = "Field `BlinkCounterSel2` writer - Blink Counter Selection #2"]
+pub type BlinkCounterSel2W<'a, REG> = crate::BitWriter<'a, REG>;
 #[doc = "Interrupt status register\n\nValue on reset: 0"]
 #[derive(Clone, Copy, Debug, PartialEq, Eq)]
-pub enum IntstsReg2 {
+pub enum IntstsReg {
     #[doc = "0: No interrupt pending"]
     NoInterruptPending = 0,
     #[doc = "1: interrupt pending"]
     InterruptPending = 1,
 }
-impl From<IntstsReg2> for bool {
+impl From<IntstsReg> for bool {
     #[inline(always)]
-    fn from(variant: IntstsReg2) -> Self {
+    fn from(variant: IntstsReg) -> Self {
         variant as u8 != 0
     }
 }
-#[doc = "Field `INTStsReg2` reader - Interrupt status register"]
-pub type IntstsReg2R = crate::BitReader<IntstsReg2>;
-impl IntstsReg2R {
+#[doc = "Field `INTStsReg` reader - Interrupt status register"]
+pub type IntstsRegR = crate::BitReader<IntstsReg>;
+impl IntstsRegR {
     #[doc = "Get enumerated values variant"]
     #[inline(always)]
-    pub const fn variant(&self) -> IntstsReg2 {
+    pub const fn variant(&self) -> IntstsReg {
         match self.bits {
-            false => IntstsReg2::NoInterruptPending,
-            true => IntstsReg2::InterruptPending,
+            false => IntstsReg::NoInterruptPending,
+            true => IntstsReg::InterruptPending,
         }
     }
     #[doc = "No interrupt pending"]
     #[inline(always)]
     pub fn is_no_interrupt_pending(&self) -> bool {
-        *self == IntstsReg2::NoInterruptPending
+        *self == IntstsReg::NoInterruptPending
     }
     #[doc = "interrupt pending"]
     #[inline(always)]
     pub fn is_interrupt_pending(&self) -> bool {
-        *self == IntstsReg2::InterruptPending
+        *self == IntstsReg::InterruptPending
     }
 }
-#[doc = "Field `INTStsReg2` writer - Interrupt status register"]
-pub type IntstsReg2W<'a, REG> = crate::BitWriter<'a, REG, IntstsReg2>;
-impl<'a, REG> IntstsReg2W<'a, REG>
+#[doc = "Field `INTStsReg` writer - Interrupt status register"]
+pub type IntstsRegW<'a, REG> = crate::BitWriter<'a, REG, IntstsReg>;
+impl<'a, REG> IntstsRegW<'a, REG>
 where
     REG: crate::Writable + crate::RegisterSpec,
 {
     #[doc = "No interrupt pending"]
     #[inline(always)]
     pub fn no_interrupt_pending(self) -> &'a mut crate::W<REG> {
-        self.variant(IntstsReg2::NoInterruptPending)
+        self.variant(IntstsReg::NoInterruptPending)
     }
     #[doc = "interrupt pending"]
     #[inline(always)]
     pub fn interrupt_pending(self) -> &'a mut crate::W<REG> {
-        self.variant(IntstsReg2::InterruptPending)
+        self.variant(IntstsReg::InterruptPending)
     }
 }
-#[doc = "Field `InputDataReg2` reader - Input data register"]
-pub type InputDataReg2R = crate::BitReader;
-#[doc = "Field `Reserved2` reader - Reserved"]
-pub type Reserved2R = crate::FieldReader<u32>;
+#[doc = "Field `InputDataReg` reader - Input data register"]
+pub type InputDataRegR = crate::BitReader;
 impl R {
     #[doc = "Bit 0 - Data register"]
     #[inline(always)]
-    pub fn data_reg2(&self) -> DataReg2R {
-        DataReg2R::new((self.bits & 1) != 0)
+    pub fn data_reg(&self) -> DataRegR {
+        DataRegR::new((self.bits & 1) != 0)
     }
     #[doc = "Bit 1 - Direction register"]
     #[inline(always)]
-    pub fn direction_reg2(&self) -> DirectionReg2R {
-        DirectionReg2R::new(((self.bits >> 1) & 1) != 0)
+    pub fn direction_reg(&self) -> DirectionRegR {
+        DirectionRegR::new(((self.bits >> 1) & 1) != 0)
     }
     #[doc = "Bit 2 - Interrupt enable"]
     #[inline(always)]
-    pub fn intenbl2(&self) -> Intenbl2R {
-        Intenbl2R::new(((self.bits >> 2) & 1) != 0)
+    pub fn intenbl(&self) -> IntenblR {
+        IntenblR::new(((self.bits >> 2) & 1) != 0)
     }
     #[doc = "Bit 3 - Interrupt sensitivity type 0 selection"]
     #[inline(always)]
-    pub fn intsensitivity_type0sel2(&self) -> IntsensitivityType0sel2R {
-        IntsensitivityType0sel2R::new(((self.bits >> 3) & 1) != 0)
+    pub fn intsensitivity_type0sel(&self) -> IntsensitivityType0selR {
+        IntsensitivityType0selR::new(((self.bits >> 3) & 1) != 0)
     }
     #[doc = "Bit 4 - Interrupt sensitivity type 1 selection"]
     #[inline(always)]
-    pub fn intsensitivity_type1sel2(&self) -> IntsensitivityType1sel2R {
-        IntsensitivityType1sel2R::new(((self.bits >> 4) & 1) != 0)
+    pub fn intsensitivity_type1sel(&self) -> IntsensitivityType1selR {
+        IntsensitivityType1selR::new(((self.bits >> 4) & 1) != 0)
     }
     #[doc = "Bit 5 - Interrupt sensitivity type 2 selection"]
     #[inline(always)]
-    pub fn intsensitivity_type2sel2(&self) -> IntsensitivityType2sel2R {
-        IntsensitivityType2sel2R::new(((self.bits >> 5) & 1) != 0)
+    pub fn intsensitivity_type2sel(&self) -> IntsensitivityType2selR {
+        IntsensitivityType2selR::new(((self.bits >> 5) & 1) != 0)
     }
     #[doc = "Bit 6 - Reset tolerance enable"]
     #[inline(always)]
-    pub fn rst_tolerance_enbl2(&self) -> RstToleranceEnbl2R {
-        RstToleranceEnbl2R::new(((self.bits >> 6) & 1) != 0)
+    pub fn rst_tolerance_enbl(&self) -> RstToleranceEnblR {
+        RstToleranceEnblR::new(((self.bits >> 6) & 1) != 0)
     }
     #[doc = "Bit 7 - Debounce setting register #1"]
     #[inline(always)]
-    pub fn debounce_setting_reg12(&self) -> DebounceSettingReg12R {
-        DebounceSettingReg12R::new(((self.bits >> 7) & 1) != 0)
+    pub fn debounce_setting_reg1(&self) -> DebounceSettingReg1R {
+        DebounceSettingReg1R::new(((self.bits >> 7) & 1) != 0)
     }
     #[doc = "Bit 8 - Debounce setting register #2"]
     #[inline(always)]
-    pub fn debounce_setting_reg22(&self) -> DebounceSettingReg22R {
-        DebounceSettingReg22R::new(((self.bits >> 8) & 1) != 0)
+    pub fn debounce_setting_reg2(&self) -> DebounceSettingReg2R {
+        DebounceSettingReg2R::new(((self.bits >> 8) & 1) != 0)
     }
     #[doc = "Bit 9 - Input mask"]
     #[inline(always)]
-    pub fn input_mask2(&self) -> InputMask2R {
-        InputMask2R::new(((self.bits >> 9) & 1) != 0)
+    pub fn input_mask(&self) -> InputMaskR {
+        InputMaskR::new(((self.bits >> 9) & 1) != 0)
     }
     #[doc = "Bit 10 - Blink Counter Selection #1"]
     #[inline(always)]
-    pub fn blink_counter_sel12(&self) -> BlinkCounterSel12R {
-        BlinkCounterSel12R::new(((self.bits >> 10) & 1) != 0)
+    pub fn blink_counter_sel1(&self) -> BlinkCounterSel1R {
+        BlinkCounterSel1R::new(((self.bits >> 10) & 1) != 0)
     }
     #[doc = "Bit 11 - Blink Counter Selection #2"]
     #[inline(always)]
-    pub fn blink_counter_sel22(&self) -> BlinkCounterSel22R {
-        BlinkCounterSel22R::new(((self.bits >> 11) & 1) != 0)
+    pub fn blink_counter_sel2(&self) -> BlinkCounterSel2R {
+        BlinkCounterSel2R::new(((self.bits >> 11) & 1) != 0)
     }
     #[doc = "Bit 12 - Interrupt status register"]
     #[inline(always)]
-    pub fn intsts_reg2(&self) -> IntstsReg2R {
-        IntstsReg2R::new(((self.bits >> 12) & 1) != 0)
+    pub fn intsts_reg(&self) -> IntstsRegR {
+        IntstsRegR::new(((self.bits >> 12) & 1) != 0)
     }
     #[doc = "Bit 13 - Input data register"]
     #[inline(always)]
-    pub fn input_data_reg2(&self) -> InputDataReg2R {
-        InputDataReg2R::new(((self.bits >> 13) & 1) != 0)
-    }
-    #[doc = "Bits 14:31 - Reserved"]
-    #[inline(always)]
-    pub fn reserved2(&self) -> Reserved2R {
-        Reserved2R::new((self.bits >> 14) & 0x0003_ffff)
+    pub fn input_data_reg(&self) -> InputDataRegR {
+        InputDataRegR::new(((self.bits >> 13) & 1) != 0)
     }
 }
 impl W {
     #[doc = "Bit 0 - Data register"]
     #[inline(always)]
-    pub fn data_reg2(&mut self) -> DataReg2W<Gpio1c8Spec> {
-        DataReg2W::new(self, 0)
+    pub fn data_reg(&mut self) -> DataRegW<Gpio1c8Spec> {
+        DataRegW::new(self, 0)
     }
     #[doc = "Bit 1 - Direction register"]
     #[inline(always)]
-    pub fn direction_reg2(&mut self) -> DirectionReg2W<Gpio1c8Spec> {
-        DirectionReg2W::new(self, 1)
+    pub fn direction_reg(&mut self) -> DirectionRegW<Gpio1c8Spec> {
+        DirectionRegW::new(self, 1)
     }
     #[doc = "Bit 2 - Interrupt enable"]
     #[inline(always)]
-    pub fn intenbl2(&mut self) -> Intenbl2W<Gpio1c8Spec> {
-        Intenbl2W::new(self, 2)
+    pub fn intenbl(&mut self) -> IntenblW<Gpio1c8Spec> {
+        IntenblW::new(self, 2)
     }
     #[doc = "Bit 3 - Interrupt sensitivity type 0 selection"]
     #[inline(always)]
-    pub fn intsensitivity_type0sel2(&mut self) -> IntsensitivityType0sel2W<Gpio1c8Spec> {
-        IntsensitivityType0sel2W::new(self, 3)
+    pub fn intsensitivity_type0sel(&mut self) -> IntsensitivityType0selW<Gpio1c8Spec> {
+        IntsensitivityType0selW::new(self, 3)
     }
     #[doc = "Bit 4 - Interrupt sensitivity type 1 selection"]
     #[inline(always)]
-    pub fn intsensitivity_type1sel2(&mut self) -> IntsensitivityType1sel2W<Gpio1c8Spec> {
-        IntsensitivityType1sel2W::new(self, 4)
+    pub fn intsensitivity_type1sel(&mut self) -> IntsensitivityType1selW<Gpio1c8Spec> {
+        IntsensitivityType1selW::new(self, 4)
     }
     #[doc = "Bit 5 - Interrupt sensitivity type 2 selection"]
     #[inline(always)]
-    pub fn intsensitivity_type2sel2(&mut self) -> IntsensitivityType2sel2W<Gpio1c8Spec> {
-        IntsensitivityType2sel2W::new(self, 5)
+    pub fn intsensitivity_type2sel(&mut self) -> IntsensitivityType2selW<Gpio1c8Spec> {
+        IntsensitivityType2selW::new(self, 5)
     }
     #[doc = "Bit 6 - Reset tolerance enable"]
     #[inline(always)]
-    pub fn rst_tolerance_enbl2(&mut self) -> RstToleranceEnbl2W<Gpio1c8Spec> {
-        RstToleranceEnbl2W::new(self, 6)
+    pub fn rst_tolerance_enbl(&mut self) -> RstToleranceEnblW<Gpio1c8Spec> {
+        RstToleranceEnblW::new(self, 6)
     }
     #[doc = "Bit 7 - Debounce setting register #1"]
     #[inline(always)]
-    pub fn debounce_setting_reg12(&mut self) -> DebounceSettingReg12W<Gpio1c8Spec> {
-        DebounceSettingReg12W::new(self, 7)
+    pub fn debounce_setting_reg1(&mut self) -> DebounceSettingReg1W<Gpio1c8Spec> {
+        DebounceSettingReg1W::new(self, 7)
     }
     #[doc = "Bit 8 - Debounce setting register #2"]
     #[inline(always)]
-    pub fn debounce_setting_reg22(&mut self) -> DebounceSettingReg22W<Gpio1c8Spec> {
-        DebounceSettingReg22W::new(self, 8)
+    pub fn debounce_setting_reg2(&mut self) -> DebounceSettingReg2W<Gpio1c8Spec> {
+        DebounceSettingReg2W::new(self, 8)
     }
     #[doc = "Bit 9 - Input mask"]
     #[inline(always)]
-    pub fn input_mask2(&mut self) -> InputMask2W<Gpio1c8Spec> {
-        InputMask2W::new(self, 9)
+    pub fn input_mask(&mut self) -> InputMaskW<Gpio1c8Spec> {
+        InputMaskW::new(self, 9)
     }
     #[doc = "Bit 10 - Blink Counter Selection #1"]
     #[inline(always)]
-    pub fn blink_counter_sel12(&mut self) -> BlinkCounterSel12W<Gpio1c8Spec> {
-        BlinkCounterSel12W::new(self, 10)
+    pub fn blink_counter_sel1(&mut self) -> BlinkCounterSel1W<Gpio1c8Spec> {
+        BlinkCounterSel1W::new(self, 10)
     }
     #[doc = "Bit 11 - Blink Counter Selection #2"]
     #[inline(always)]
-    pub fn blink_counter_sel22(&mut self) -> BlinkCounterSel22W<Gpio1c8Spec> {
-        BlinkCounterSel22W::new(self, 11)
+    pub fn blink_counter_sel2(&mut self) -> BlinkCounterSel2W<Gpio1c8Spec> {
+        BlinkCounterSel2W::new(self, 11)
     }
     #[doc = "Bit 12 - Interrupt status register"]
     #[inline(always)]
-    pub fn intsts_reg2(&mut self) -> IntstsReg2W<Gpio1c8Spec> {
-        IntstsReg2W::new(self, 12)
+    pub fn intsts_reg(&mut self) -> IntstsRegW<Gpio1c8Spec> {
+        IntstsRegW::new(self, 12)
     }
 }
 #[doc = "GPIO018 Control Register\n\nYou can [`read`](crate::Reg::read) this register and get [`gpio1c8::R`](R). You can [`reset`](crate::Reg::reset), [`write`](crate::Reg::write), [`write_with_zero`](crate::Reg::write_with_zero) this register using [`gpio1c8::W`](W). You can also [`modify`](crate::Reg::modify) this register. See [API](https://docs.rs/svd2rust/#read--modify--write-api)."]
