@@ -1,16 +1,16 @@
 #[repr(C)]
 #[doc = "Register block"]
 pub struct RegisterBlock {
-    buff: [Buff; 8],
+    buff: [Buff; 16],
 }
 impl RegisterBlock {
-    #[doc = "0x00..0x20 - I2C Buffer Mode Buff"]
+    #[doc = "0x00..0x40 - I2C Buffer Mode Buff"]
     #[inline(always)]
     pub const fn buff(&self, n: usize) -> &Buff {
         &self.buff[n]
     }
     #[doc = "Iterator for array of:"]
-    #[doc = "0x00..0x20 - I2C Buffer Mode Buff"]
+    #[doc = "0x00..0x40 - I2C Buffer Mode Buff"]
     #[inline(always)]
     pub fn buff_iter(&self) -> impl Iterator<Item = &Buff> {
         self.buff.iter()

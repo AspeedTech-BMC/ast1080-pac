@@ -755,7 +755,7 @@ impl core::fmt::Debug for I2c13 {
 #[doc = "i2c interface"]
 pub use self::i2c as i2c13;
 #[doc = "i2cbuff"]
-pub type I2cbuff = crate::Periph<i2cbuff::RegisterBlock, 0x74c0_f1a0>;
+pub type I2cbuff = crate::Periph<i2cbuff::RegisterBlock, 0x74c0_f1c0>;
 impl core::fmt::Debug for I2cbuff {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("I2cbuff").finish()
@@ -764,7 +764,7 @@ impl core::fmt::Debug for I2cbuff {
 #[doc = "i2cbuff"]
 pub mod i2cbuff;
 #[doc = "i2cbuff interface"]
-pub type I2cbuff1 = crate::Periph<i2cbuff::RegisterBlock, 0x74c0_f2a0>;
+pub type I2cbuff1 = crate::Periph<i2cbuff::RegisterBlock, 0x74c0_f2c0>;
 impl core::fmt::Debug for I2cbuff1 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("I2cbuff1").finish()
@@ -773,7 +773,7 @@ impl core::fmt::Debug for I2cbuff1 {
 #[doc = "i2cbuff interface"]
 pub use self::i2cbuff as i2cbuff1;
 #[doc = "i2cbuff interface"]
-pub type I2cbuff2 = crate::Periph<i2cbuff::RegisterBlock, 0x74c0_f3a0>;
+pub type I2cbuff2 = crate::Periph<i2cbuff::RegisterBlock, 0x74c0_f3c0>;
 impl core::fmt::Debug for I2cbuff2 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("I2cbuff2").finish()
@@ -782,7 +782,7 @@ impl core::fmt::Debug for I2cbuff2 {
 #[doc = "i2cbuff interface"]
 pub use self::i2cbuff as i2cbuff2;
 #[doc = "i2cbuff interface"]
-pub type I2cbuff3 = crate::Periph<i2cbuff::RegisterBlock, 0x74c0_f4a0>;
+pub type I2cbuff3 = crate::Periph<i2cbuff::RegisterBlock, 0x74c0_f4c0>;
 impl core::fmt::Debug for I2cbuff3 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("I2cbuff3").finish()
@@ -791,7 +791,7 @@ impl core::fmt::Debug for I2cbuff3 {
 #[doc = "i2cbuff interface"]
 pub use self::i2cbuff as i2cbuff3;
 #[doc = "i2cbuff interface"]
-pub type I2cbuff4 = crate::Periph<i2cbuff::RegisterBlock, 0x74c0_f5a0>;
+pub type I2cbuff4 = crate::Periph<i2cbuff::RegisterBlock, 0x74c0_f5c0>;
 impl core::fmt::Debug for I2cbuff4 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("I2cbuff4").finish()
@@ -800,7 +800,7 @@ impl core::fmt::Debug for I2cbuff4 {
 #[doc = "i2cbuff interface"]
 pub use self::i2cbuff as i2cbuff4;
 #[doc = "i2cbuff interface"]
-pub type I2cbuff5 = crate::Periph<i2cbuff::RegisterBlock, 0x74c0_f6a0>;
+pub type I2cbuff5 = crate::Periph<i2cbuff::RegisterBlock, 0x74c0_f6c0>;
 impl core::fmt::Debug for I2cbuff5 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("I2cbuff5").finish()
@@ -809,7 +809,7 @@ impl core::fmt::Debug for I2cbuff5 {
 #[doc = "i2cbuff interface"]
 pub use self::i2cbuff as i2cbuff5;
 #[doc = "i2cbuff interface"]
-pub type I2cbuff6 = crate::Periph<i2cbuff::RegisterBlock, 0x74c0_f7a0>;
+pub type I2cbuff6 = crate::Periph<i2cbuff::RegisterBlock, 0x74c0_f7c0>;
 impl core::fmt::Debug for I2cbuff6 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("I2cbuff6").finish()
@@ -818,7 +818,7 @@ impl core::fmt::Debug for I2cbuff6 {
 #[doc = "i2cbuff interface"]
 pub use self::i2cbuff as i2cbuff6;
 #[doc = "i2cbuff interface"]
-pub type I2cbuff7 = crate::Periph<i2cbuff::RegisterBlock, 0x74c0_f8a0>;
+pub type I2cbuff7 = crate::Periph<i2cbuff::RegisterBlock, 0x74c0_f8c0>;
 impl core::fmt::Debug for I2cbuff7 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("I2cbuff7").finish()
@@ -827,7 +827,7 @@ impl core::fmt::Debug for I2cbuff7 {
 #[doc = "i2cbuff interface"]
 pub use self::i2cbuff as i2cbuff7;
 #[doc = "i2cbuff interface"]
-pub type I2cbuff8 = crate::Periph<i2cbuff::RegisterBlock, 0x74c0_f9a0>;
+pub type I2cbuff8 = crate::Periph<i2cbuff::RegisterBlock, 0x74c0_f9c0>;
 impl core::fmt::Debug for I2cbuff8 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("I2cbuff8").finish()
@@ -836,7 +836,7 @@ impl core::fmt::Debug for I2cbuff8 {
 #[doc = "i2cbuff interface"]
 pub use self::i2cbuff as i2cbuff8;
 #[doc = "i2cbuff interface"]
-pub type I2cbuff9 = crate::Periph<i2cbuff::RegisterBlock, 0x74c0_faa0>;
+pub type I2cbuff9 = crate::Periph<i2cbuff::RegisterBlock, 0x74c0_fac0>;
 impl core::fmt::Debug for I2cbuff9 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("I2cbuff9").finish()
@@ -845,7 +845,7 @@ impl core::fmt::Debug for I2cbuff9 {
 #[doc = "i2cbuff interface"]
 pub use self::i2cbuff as i2cbuff9;
 #[doc = "i2cbuff interface"]
-pub type I2cbuff10 = crate::Periph<i2cbuff::RegisterBlock, 0x74c0_fba0>;
+pub type I2cbuff10 = crate::Periph<i2cbuff::RegisterBlock, 0x74c0_fbc0>;
 impl core::fmt::Debug for I2cbuff10 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("I2cbuff10").finish()
@@ -854,7 +854,7 @@ impl core::fmt::Debug for I2cbuff10 {
 #[doc = "i2cbuff interface"]
 pub use self::i2cbuff as i2cbuff10;
 #[doc = "i2cbuff interface"]
-pub type I2cbuff11 = crate::Periph<i2cbuff::RegisterBlock, 0x74c0_fca0>;
+pub type I2cbuff11 = crate::Periph<i2cbuff::RegisterBlock, 0x74c0_fcc0>;
 impl core::fmt::Debug for I2cbuff11 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("I2cbuff11").finish()
@@ -863,7 +863,7 @@ impl core::fmt::Debug for I2cbuff11 {
 #[doc = "i2cbuff interface"]
 pub use self::i2cbuff as i2cbuff11;
 #[doc = "i2cbuff interface"]
-pub type I2cbuff12 = crate::Periph<i2cbuff::RegisterBlock, 0x74c0_fda0>;
+pub type I2cbuff12 = crate::Periph<i2cbuff::RegisterBlock, 0x74c0_fdc0>;
 impl core::fmt::Debug for I2cbuff12 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("I2cbuff12").finish()
@@ -872,7 +872,7 @@ impl core::fmt::Debug for I2cbuff12 {
 #[doc = "i2cbuff interface"]
 pub use self::i2cbuff as i2cbuff12;
 #[doc = "i2cbuff interface"]
-pub type I2cbuff13 = crate::Periph<i2cbuff::RegisterBlock, 0x74c0_fea0>;
+pub type I2cbuff13 = crate::Periph<i2cbuff::RegisterBlock, 0x74c0_fec0>;
 impl core::fmt::Debug for I2cbuff13 {
     fn fmt(&self, f: &mut core::fmt::Formatter) -> core::fmt::Result {
         f.debug_struct("I2cbuff13").finish()
